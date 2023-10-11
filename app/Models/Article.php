@@ -35,7 +35,7 @@ class Article extends Model
         $raiting = new Raiting();
         $raiting = $raiting::where('journal_id', $this->id);
         $count = $raiting->count();
-        if ($count == 0) {
+        if ($count != 0) {
             $sum = ceil($raiting->sum('raiting') / $count);
             return [$sum, $count];
         }
