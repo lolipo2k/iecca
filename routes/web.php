@@ -6,6 +6,8 @@ use App\Http\Controllers\JournalController;
 use App\Http\Controllers\EventController;
 use App\Models\Info;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\RaitingController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ use App\Http\Controllers\UsersController;
 */
 
 Route::get('/', HomeController::class)->name('home');
-Route::get('/journal/list/{id?}', [JournalController::class, 'list'])->name('journals');
+Route::get('/journal/list', [JournalController::class, 'list'])->name('journals');
 Route::get('/journal/{id}', [JournalController::class, 'single']);
 Route::get('/event/list/{id?}', [EventController::class, 'list'])->name('events');
 Route::get('/event/{id}', [EventController::class, 'single']);
@@ -29,3 +31,9 @@ Route::get('/memorandum', function () {
 })->name('memorandum');
 Route::get('/users', [UsersController::class, 'list'])->name('users');
 Route::get('/user/{id}', [UsersController::class, 'single']);
+
+Route::post('set-raiting', [RaitingController::class, 'raiting']);
+Route::post('register', [AuthController::class, 'register']);
+Route::post('auth', [AuthController::class, 'auth']);
+Route::get('auth/{id}', [AuthController::class, 'comments']);
+

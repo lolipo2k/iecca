@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="col-5">
+<div class="col-12 col-lg-5">
     <div class="section-title">
         главная
     </div>

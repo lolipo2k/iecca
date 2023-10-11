@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 use App\Models\Media;
+use App\Models\Raiting;
 
 class Article extends Model
 {
@@ -15,7 +16,7 @@ class Article extends Model
 
     protected $table = 'article';
 
-    protected $appends = ['imageUrl', 'attachmentUrl'];
+    protected $appends = ['imageUrl', 'attachmentUrl', 'raiting'];
 
     protected $fillable = ['count'];
 
@@ -27,6 +28,15 @@ class Article extends Model
     public function direction(): BelongsTo
     {
         return $this->belongsTo(Direction::class);
+    }
+
+    public function getRaitingAttribute()
+    {
+        $raiting = new Raiting();
+        $raiting = $raiting::where('journal_id', $this->id);
+        $count = $raiting->count();
+        $sum = ceil($raiting->sum('raiting') / $count);
+        return [$sum, $count];
     }
 
     public function getImageUrlAttribute()

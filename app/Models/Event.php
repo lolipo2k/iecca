@@ -19,7 +19,7 @@ class Event extends Model
 
     protected $table = 'news';
 
-    protected $appends = ['imageUrl', 'galleryList'];
+    protected $appends = ['imageUrl', 'galleryList', 'raiting'];
 
     protected $fillable = ['count'];
 
@@ -52,6 +52,15 @@ class Event extends Model
     public function getImageUrlAttribute()
     {
         return $this->getMedia($this->image);
+    }
+
+    public function getRaitingAttribute()
+    {
+        $raiting = new Raiting();
+        $raiting = $raiting::where('event_id', $this->id);
+        $count = $raiting->count();
+        $sum = ceil($raiting->sum('raiting') / $count);
+        return [$sum, $count];
     }
 
     public function getGalleryListAttribute()

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Home</title>
 </head>
 
@@ -29,6 +30,16 @@
                 </div>
                 <div class="header-content__right">
                     <ul>
+                        @if(Auth::check())
+                        <li>
+                            <a href="/auth/{{ auth()->user()->id }}">
+                                {{ auth()->user()->username }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ Auth::logout() }}">Выйти</a>
+                        </li>
+                        @else
                         <li class="registration-open">
                             <img src="/icons/registration.svg" alt="">
                             Регистрация
@@ -37,12 +48,52 @@
                             <img src="/icons/login.svg" alt="">
                             вход
                         </li>
+                        @endif
+                        <li class="burger-menu">
+                            <img src="/icons/burger.svg" alt="">
+                        </li>
                         <li>
                             <a href="https://csef.ru/" style="font-weight: 700;">cs</a>
                         </li>
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="mobile-menu__top burger-menu--close">
+                <div class="registration-open">
+                    <img src="/icons/registration.svg" alt="">
+                </div>
+                <div class="auth-open burger-menu--close">
+                    <img src="/icons/login.svg" alt="">
+                </div>
+                <div class="burger-menu--close">
+                    <img src="/icons/close.svg" alt="">
+                </div>
+            </div>
+
+            <ul>
+                @if(auth()->check())
+                <li href="/auth/{{ auth()->user()->id }}">
+                    {{ auth()->user()->username }}
+                </li>
+                <li>
+                    <a href="{{ Auth::logout() }}">Выйти</a>
+                </li>
+                @endif
+                <li>
+                    <a href="{{ route('memorandum') }}">Меморандум о создании Совета</a>
+                </li>
+                <li>
+                    <a href="{{ route('users') }}">Члены Совета</a>
+                </li>
+                <li>
+                    <a href="{{ route('events') }}">мероприятия совета</a>
+                </li>
+                <li>
+                    <a href="{{ route('journals') }}">журнал “арктическое обозрение”</a>
+                </li>
+            </ul>
         </div>
     </header>
     <nav class="header-menu">
@@ -102,19 +153,15 @@
             </div>
             @endif
             <div class="main-content row justify-content-between">
-                <div class="col-3">
+                <div class="col-3 d-none d-lg-block">
                     <div class="section-title">
                         выпуски журнала
                     </div>
                     <div class="journal-list">
-                        @foreach ($journal as $value)
-                        @if(count($value->articles) != 0)
+
                         <div class="journal-slider">
-                            <div class="journal-slider__title">
-                                {{$value->name_ru}}
-                            </div>
                             <div class="journal-slider__wrap">
-                                @foreach ($value->articles as $item)
+                                @foreach ($articles as $item)
                                 <div class="journal-item">
                                     <div class="journal-item__img">
                                         <a href="/journal/{{$item->id}}">
@@ -130,12 +177,10 @@
                                 @endforeach
                             </div>
                         </div>
-                        @endif
-                        @endforeach
                     </div>
                 </div>
                 @yield('content')
-                <div class="col-3">
+                <div class="col-3 d-none d-lg-block">
                     <div class="section-title">
                         календарь
                     </div>
@@ -145,7 +190,7 @@
             </div>
             <div class="event-content row">
                 @foreach($events as $item)
-                <div class="col-4">
+                <div class="col-lg-4 col-sm-6 col-12">
                     <div class="event-item">
                         <a href="{{$item->url}}">
                             <div class="event-img" style="background-image: url('{{$item->imageUrl}}')">
@@ -173,21 +218,7 @@
                 @endforeach
             </div>
             <div class="footer-menu row">
-                <div class="col-3">
-                    <div class="menu-title">
-                        Направления
-                    </div>
-                    <ul>
-                        @foreach ($journal as $value)
-                        <li>
-                            <a href="{{ route('journals', $value->id) }}">
-                                {{$value->name_ru}}
-                            </a>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="col-3">
+                <div class="col-4">
                     <div class="menu-title">
                         Последние мероприятия
                     </div>
@@ -199,7 +230,7 @@
                         @endforeach
                     </ul>
                 </div>
-                <div class="col-3">
+                <div class="col-4">
                     <div class="menu-title">
                         Информация
                     </div>
@@ -212,7 +243,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-3">
+                <div class="col-4">
                     <div class="menu-title">
                         НАШИ ПРОЕКТЫ
                     </div>
@@ -235,13 +266,13 @@
                 <label>
                     Логин
                 </label>
-                <input type="text">
+                <input type="text" class="login">
             </div>
             <div class="input-item">
                 <label>
                     Пароль
                 </label>
-                <input type="text">
+                <input type="password" class="password">
             </div>
             <div class="remember">
                 <div class="checkbox-item">
@@ -290,25 +321,25 @@
                 <label>
                     Логин
                 </label>
-                <input type="text">
+                <input type="text" class="login">
             </div>
             <div class="input-item">
                 <label>
                     E-mail
                 </label>
-                <input type="text">
+                <input type="text" class="mail">
             </div>
             <div class="input-item">
                 <label>
                     Пароль
                 </label>
-                <input type="text">
+                <input type="password" class="password">
             </div>
             <div class="input-item">
                 <label>
                     Повторите пароль
                 </label>
-                <input type="text">
+                <input type="password" class="password-repeat">
             </div>
             <div class="checkbox-choose">
                 <div class="checkbox-choose__title">
@@ -338,6 +369,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="{{asset('/js/script.js')}}"></script>
+    @yield('scripts')
 </body>
 
 </html>

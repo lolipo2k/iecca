@@ -11,8 +11,13 @@ class User extends Authenticatable
 {
     use HasFactory;
 
+    protected $fillable = [
+        'username',
+        'email',
+        'password_hash',
+    ];
 
-    protected $appends = ['fullName', 'imageUrl', 'shortDescription'];
+    protected $appends = ['fullName', 'imageUrl', 'shortDescription', 'comments'];
 
     protected $table = 'front_user';
 
@@ -39,6 +44,13 @@ class User extends Authenticatable
         return $this->getMedia($this->image);
     }
 
+    public function getCommentsAttribute()
+    {
+        $comments = Comment::where('user_id', $this->id)->get();
+
+        return $comments;
+    }
+
     private function getMedia($item)
     {
         if ($item) {
@@ -57,4 +69,15 @@ class User extends Authenticatable
 
         return '';
     }
+
+    public function setPasswordHashAttribute($password)
+    {
+        $this->attributes['password_hash'] = bcrypt($password);
+    }
+
+    public function getAuthPassword()
+    {
+        return $this->password_hash;
+    }
+
 }

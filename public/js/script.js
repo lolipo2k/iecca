@@ -88,13 +88,71 @@ $(document).ready(function () {
                 $(stars[index]).addClass('act');
             }
             $(".single-rating__stars").removeClass('act');
+
+            const singleRaiting = $(".single-rating");
+
+            const id = singleRaiting.data('id');
+            const type = singleRaiting.data('type');
+
+            singleRaiting.find('span').text(Number(singleRaiting.find('span').text()) + 1)
+
+            $.ajax({
+                url: '/set-raiting',
+                type: 'post',
+                data: `id=${id}&type=${type}&raiting=${$(this).data('id') + 1}`,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
         }
     });
 
-    $(".report-full").click(function(){
+    $(".report-full").click(function () {
         $(this).parent().find('.report-description').find('div').toggleClass('disbl');
         $(this).parent().toggleClass('full');
 
         $(this).parent().find('.report-full').toggleClass('disbl');
+    });
+
+    $(".burger-menu").click(function () {
+        $(".mobile-menu").addClass('act');
+    });
+    $(".burger-menu--close").click(function () {
+        $(".mobile-menu").removeClass('act');
+    });
+
+    $(".modal-registration .btn-submit").click(function () {
+        const login = $(".modal-registration .login").val();
+        const mail = $(".modal-registration .mail").val();
+        const password = $(".modal-registration .password").val();
+        const repeat = $(".modal-registration .password-repeat").val();
+        const sex = ($("#m").prop('checked') == true) ? 1 : 0;
+
+        $.ajax({
+            url: '/register',
+            type: 'post',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: `username=${login}&email=${mail}&password=${password}&repeat=${repeat}&sex=${sex}`,
+        }).then(function () {
+            location.reload();
+        });
+    });
+
+    $(".modal-auth .btn-submit").click(function () {
+        const login = $(".modal-auth .login").val();
+        const password = $(".modal-auth .password").val();
+
+        $.ajax({
+            url: '/auth',
+            type: 'post',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: `username=${login}&password=${password}`,
+        }).then(function () {
+            location.reload();
+        });
     });
 });

@@ -36,7 +36,8 @@ button {
     padding: 0;
 }
 
-input[type='text'] {
+input[type='text'],
+input[type='password'] {
     width: 100%;
     outline: none;
     border-radius: 10px;
@@ -265,6 +266,11 @@ input[type="checkbox"] {
         align-items: flex-start;
         position: relative;
 
+        @media screen and (max-width: 768px) {
+            height: 100%;
+            overflow-y: auto;
+        }
+
         .close {
             position: absolute;
             right: 20px;
@@ -349,6 +355,54 @@ header {
     padding: 39px 0 88px 0;
     background-image: url('../img/header/header-background.svg');
 
+    @media screen and (max-width: 500px) {
+        background-position: top;
+        background-size: cover;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: #FFF;
+        padding: 20px 50px;
+        z-index: 99999;
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &.act {
+            display: flex;
+        }
+
+        &__top {
+            display: flex;
+            gap: 17px;
+
+            img {
+                width: 24px;
+            }
+        }
+
+        ul {
+            margin-top: 20px;
+
+            li {
+                margin-top: 10px;
+                text-transform: uppercase;
+                font-size: 15px;
+
+                a {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
     .header-content {
         display: flex;
         align-items: flex-end;
@@ -360,6 +414,16 @@ header {
                 color: #0D3D60;
                 width: 560px;
                 padding-left: 13px;
+
+                @media screen and (max-width: 992px) {
+                    padding-left: 0;
+                    width: 400px;
+                    font-size: 17px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    display: none;
+                }
             }
 
             .header-title {
@@ -387,6 +451,22 @@ header {
                     align-items: flex-end;
                     cursor: pointer;
 
+                    @media screen and (max-width: 768px) {
+                        display: none;
+                    }
+
+                    &.burger-menu {
+                        display: none;
+
+                        @media screen and (max-width: 768px) {
+                            display: block;
+
+                            img {
+                                width: 38px;
+                            }
+                        }
+                    }
+
                     &:last-child {
                         font-size: 20px;
                         color: #E4E4E4;
@@ -398,6 +478,10 @@ header {
                         height: 38px;
                         justify-content: center;
                         align-items: center;
+
+                        @media screen and (max-width: 768px) {
+                            display: none;
+                        }
                     }
 
                     img {
@@ -414,6 +498,10 @@ header {
     background: #0D3D60;
     padding: 33px 0px;
     position: relative;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 
     &>.container>ul {
         display: flex;
@@ -476,6 +564,10 @@ header {
 main {
     margin-top: 100px;
 
+    @media screen and (max-width: 500px) {
+        margin-top: 20px;
+    }
+
     .main-baner {
         width: 100%;
         position: relative;
@@ -486,6 +578,7 @@ main {
             img {
                 width: 100%;
                 object-fit: cover;
+                min-height: 350px;
             }
         }
 
@@ -499,11 +592,23 @@ main {
             bottom: 20px;
             width: 890px;
 
+            @media screen and (max-width: 500px) {
+                padding-left: 20px;
+            }
+
+            @media screen and (max-width: 992px) {
+                width: calc(100% - 50px);
+            }
+
             .baner-title {
                 font-size: 35px;
                 color: #F5F5F5;
                 font-weight: 700;
                 text-transform: uppercase;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 25px;
+                }
             }
 
             .baner-description {
@@ -513,6 +618,16 @@ main {
                 color: #F5F5F5;
                 text-transform: uppercase;
                 position: relative;
+
+                @media screen and (max-width: 992px) {
+                    height: 200px;
+                    overflow: hidden;
+                }
+
+                @media screen and (max-width: 500px) {
+                    font-size: 16px;
+                    height: 125px;
+                }
 
                 &__name {
                     margin-top: 8px;
@@ -558,6 +673,10 @@ main {
 
     .main-content {
         margin-top: 89px;
+
+        @media screen and (max-width: 500px) {
+            margin-top: 20px;
+        }
 
         .journal-list {
             .journal-slider {
@@ -841,6 +960,10 @@ main {
             .single-photo {
                 margin-top: 90px;
 
+                @media screen and (max-width: 500px) {
+                    margin-top: 30px;
+                }
+
                 &__wrap {
                     img {
                         border-radius: 15px;
@@ -868,6 +991,10 @@ main {
             .single-reports {
                 margin-top: 90px;
 
+                @media screen and (max-width: 500px) {
+                    margin-top: 30px;
+                }
+
                 .reports-list {
                     display: flex;
                     justify-content: space-between;
@@ -876,6 +1003,10 @@ main {
                     &__item {
                         width: 240px;
                         position: relative;
+
+                        @media screen and (max-width: 768px) {
+                            width: 100%;
+                        }
 
                         &.full {
                             width: 100%;
@@ -891,6 +1022,10 @@ main {
                                 top: calc(50% - 70px);
                                 background: rgba(39, 39, 39, 0.60);
                                 display: block;
+
+                                @media screen and (max-width: 768px) {
+                                    display: none;
+                                }
                             }
                         }
 
@@ -948,6 +1083,10 @@ main {
                 margin-top: 95px;
                 border-top: 1px solid rgba(0, 0, 0, 0.25);
                 padding-top: 14px;
+
+                @media screen and (max-width: 500px) {
+                    margin-top: 30px;
+                }
 
                 .info {
                     font-size: 20px;
@@ -1027,9 +1166,18 @@ main {
             &__info {
                 display: flex;
 
+                @media screen and (max-width: 500px) {
+                    flex-wrap: wrap;
+                }
+
                 .user-photo {
                     width: 150px;
                     height: 150px;
+
+                    @media screen and (max-width: 500px) {
+                        width: 100%;
+                        height: auto;
+                    }
 
                     img {
                         object-fit: cover;
@@ -1041,6 +1189,11 @@ main {
                     font-size: 20px;
                     color: #272727;
                     width: calc(100% - 150px);
+
+                    @media screen and (max-width: 500px) {
+                        width: 100%;
+                        margin-top: 20px;
+                    }
                 }
             }
 
@@ -1056,6 +1209,10 @@ main {
                 ul {
                     margin-top: 6px;
                     list-style-type: disc;
+
+                    @media screen and (max-width: 500px) {
+                        margin-left: 20px;
+                    }
 
                     li {
                         color: #0D3D60;
@@ -1144,6 +1301,10 @@ main {
             position: relative;
             margin-top: 20px;
 
+            @media screen and (max-width: 500px) {
+                width: 100%;
+            }
+
             &:hover {
                 .event-img {
                     transform: scale(1.2);
@@ -1207,6 +1368,10 @@ footer {
     .footer-menu {
         margin-top: 100px;
 
+        @media screen and (max-width: 500px) {
+            margin-top: 30px;
+        }
+
         .footer-menu {
             .col-3 {
                 &:last-child {
@@ -1228,6 +1393,10 @@ footer {
             margin-bottom: 28px;
             position: relative;
 
+            @media screen and (max-width: 500px) {
+                font-size: 14px;
+            }
+
             &::after {
                 content: '';
                 width: 2px;
@@ -1236,6 +1405,10 @@ footer {
                 left: calc(100% - 35px);
                 top: -10px;
                 position: absolute;
+
+                @media screen and (max-width: 992px) {
+                    left: 100%;
+                }
             }
         }
 
