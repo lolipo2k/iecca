@@ -74,6 +74,7 @@ class Event extends Model
             $media = new Media();
             $media = $media->where('table_id', $gallery[0]->id)->where('table_name', 'gallery')->get();
 
+            $data = [];
             foreach ($media as $key => $value) {
                 $format = explode('.', $value->name);
                 $data[$key] = $name = $this->host . "/media/galleries/{$value->table_id}/" . $value->id . '.' . end($format);
