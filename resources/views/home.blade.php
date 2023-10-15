@@ -30,9 +30,9 @@
                 {!! $item->intro_text_ru !!}
             </div>
             <div class="article-link">
-                <a href="{{ route('events', $item->category->id) }}">
-                    {{$item->category->name_ru}}
-                </a>
+                @foreach($item->categories as $category)
+                <a href="{{ route('events', $category->id) }}">{{$category->name_ru}}</a>
+                @endforeach
             </div>
         </article>
         @endforeach
