@@ -21,7 +21,7 @@ class Content extends Model
 
     public function getAttachmentUrlAttribute()
     {
-        return $this->getMedia($this->attachment);
+        return $this->getMedia($this->pdf);
     }
 
     private function getMedia($item)
