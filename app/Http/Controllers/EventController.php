@@ -13,9 +13,9 @@ class EventController extends Controller
             $list = new Event();
             $list = $list::where('status', 1)->paginate(5);
         } else {
-            $list = Event::rightJoin('tags_to_news', 'tags_to_news.tag_id', '=', "{$request->id}")
+            $list = Event::rightJoin('tags_to_news', 'tags_to_news.news_id', '=', 'news.id')
                 ->where('news.status', 1)
-                ->where('tags_to_news.news_id', 'news.id')
+                ->where('tags_to_news.tag_id', $request->id)
                 ->select("news.*")->paginate(5);
         }
 
