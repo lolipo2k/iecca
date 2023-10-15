@@ -59,8 +59,11 @@ class Event extends Model
         $raiting = new Raiting();
         $raiting = $raiting::where('event_id', $this->id);
         $count = $raiting->count();
-        $sum = ceil($raiting->sum('raiting') / $count);
-        return [$sum, $count];
+        if ($count != 0) {
+            $sum = ceil($raiting->sum('raiting') / $count);
+            return [$sum, $count];
+        }
+        return [0, 0];
     }
 
     public function getGalleryListAttribute()

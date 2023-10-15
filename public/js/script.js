@@ -106,13 +106,13 @@ $(document).ready(function () {
             });
         }
     });
-
-    $(".report-full").click(function () {
-        $(this).parent().find('.report-description').find('div').toggleClass('disbl');
-        $(this).parent().toggleClass('full');
-
-        $(this).parent().find('.report-full').toggleClass('disbl');
-    });
+    /*
+        $(".report-full").click(function () {
+            $(this).parent().find('.report-description').find('div').toggleClass('disbl');
+            $(this).parent().toggleClass('full');
+    
+            $(this).parent().find('.report-full').toggleClass('disbl');
+        }); */
 
     $(".burger-menu").click(function () {
         $(".mobile-menu").addClass('act');

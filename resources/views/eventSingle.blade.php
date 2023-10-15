@@ -70,16 +70,18 @@
                     <div class="report-description">
                         {!! $report->intro_text !!}
 
-                        <div class="disbl">
+                       <!-- <div class="disbl">
                             {!! $report->full_text !!}
-                        </div>
+                        </div> -->
                     </div>
                     <div class="report-full">
-                        Читать полностью
+                        <a href="/report/{{$report->id}}">
+                            Читать полностью
+                        </a>
                     </div>
-                    <div class="report-full disbl">
+                    <!--<div class="report-full disbl">
                         Свернуть
-                    </div>
+                    </div> -->
                 </div>
                 @endforeach
             </div>

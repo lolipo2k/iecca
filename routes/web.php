@@ -5,9 +5,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\EventController;
 use App\Models\Info;
+use App\Models\Report;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\RaitingController;
 use App\Http\Controllers\AuthController;
+use GuzzleHttp\Psr7\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +38,7 @@ Route::post('set-raiting', [RaitingController::class, 'raiting']);
 Route::post('register', [AuthController::class, 'register']);
 Route::post('auth', [AuthController::class, 'auth']);
 Route::get('auth/{id}', [AuthController::class, 'comments']);
-
+Route::get('/report/{id}', function ($id) {
+    $item = Report::find($id);
+    return view("reportSingle", compact('item'));
+});
