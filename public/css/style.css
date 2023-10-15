@@ -32,6 +32,10 @@ button {
   padding: 0;
 }
 
+table {
+  max-width: 100%;
+}
+
 input[type=text],
 input[type=password] {
   width: 100%;
@@ -921,6 +925,17 @@ main .main-content .single-content .single-reports .reports-list__item .report-f
 }
 main .main-content .single-content .single-reports .reports-list__item .report-full.disbl {
   display: none;
+}
+main .main-content .single-content .single-contents__title {
+  font-weight: 700;
+  font-size: 22px;
+}
+main .main-content .single-content .single-contents ul {
+  list-style-type: disc;
+}
+main .main-content .single-content .single-contents ul li {
+  font-size: 20px;
+  color: #0D3D60;
 }
 main .main-content .single-content .single-bottom {
   margin-top: 95px;

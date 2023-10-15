@@ -41,6 +41,22 @@
                 скачать
             </a>
         </div>
+        @if(!empty($item->contents))
+        <div class="single-contents">
+            <div class="single-contents__title">
+                Статьи по теме:
+            </div>
+            <ul>
+                @foreach($item->contents as $content)
+                <li>
+                    <a href="/content/{$content->id}}">
+                        {{$content->title_ru}}
+                    </a>
+                </li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="single-bottom">
             <div class="info">
                 Прочитано {{$item->count}} раз

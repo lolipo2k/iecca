@@ -65,12 +65,12 @@
                         {{$report->title}}
                     </div>
                     <div class="report-name">
-                        {{$report->author_name}}
+                        {{ $report->user->fullName }}
                     </div>
                     <div class="report-description">
                         {!! $report->intro_text !!}
 
-                       <!-- <div class="disbl">
+                        <!-- <div class="disbl">
                             {!! $report->full_text !!}
                         </div> -->
                     </div>

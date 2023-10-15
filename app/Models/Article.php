@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 use App\Models\Media;
 use App\Models\Raiting;
@@ -28,6 +29,11 @@ class Article extends Model
     public function direction(): BelongsTo
     {
         return $this->belongsTo(Direction::class);
+    }
+
+    public function contents(): HasMany
+    {
+        return $this->hasMany(Content::class, 'article_id', 'id');
     }
 
     public function getRaitingAttribute()
