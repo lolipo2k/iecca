@@ -81,9 +81,11 @@
                     <a href="{{ Auth::logout() }}">Выйти</a>
                 </li>
                 @endif
+                @foreach($statics as $static)
                 <li>
-                    <a href="{{ route('memorandum') }}">Меморандум о создании Совета</a>
+                    <a href="/page/{{$static->id}}">{{$static->title_ru}}</a>
                 </li>
+                @endforeach
                 <li>
                     <a href="{{ route('users') }}">Члены Совета</a>
                 </li>
@@ -104,9 +106,11 @@
                     <div class="second-menu">
                         <div class="container">
                             <ul>
+                                @foreach($statics as $static)
                                 <li>
-                                    <a href="{{ route('memorandum') }}">Меморандум о создании Совета</a>
+                                    <a href="/page/{{$static->id}}">{{$static->title_ru}}</a>
                                 </li>
+                                @endforeach
                                 <li>
                                     <a href="{{ route('users') }}">Члены Совета</a>
                                 </li>
@@ -235,9 +239,11 @@
                         Информация
                     </div>
                     <ul>
+                        @foreach($statics as $static)
                         <li>
-                            <a href="{{ route('memorandum') }}">Меморандум о создании Совета</a>
+                            <a href="/page/{{$static->id}}">{{$static->title_ru}}</a>
                         </li>
+                        @endforeach
                         <li>
                             <a href="{{ route('users') }}">Члены Совета</a>
                         </li>

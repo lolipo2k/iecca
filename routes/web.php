@@ -28,10 +28,10 @@ Route::get('/journal/list', [JournalController::class, 'list'])->name('journals'
 Route::get('/journal/{id}', [JournalController::class, 'single']);
 Route::get('/event/list/{id?}', [EventController::class, 'list'])->name('events');
 Route::get('/event/{id}', [EventController::class, 'single']);
-Route::get('/memorandum', function () {
-    $item = Info::find(6);
+Route::get('/page/{id}', function ($id) {
+    $item = Info::find($id);
     return view("memorandum", compact('item'));
-})->name('memorandum');
+});
 Route::get('/users', [UsersController::class, 'list'])->name('users');
 Route::get('/user/{id}', [UsersController::class, 'single']);
 

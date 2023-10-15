@@ -8,6 +8,7 @@ use App\Models\Article;
 use App\Models\Event;
 use App\Models\Banner;
 use App\Models\Category;
+use App\Models\Info;
 
 class ComposerServiceProvider extends ServiceProvider
 {
@@ -28,7 +29,8 @@ class ComposerServiceProvider extends ServiceProvider
         View::composer(['layouts.default'], function ($view) {
             $view->with([
                 'articles' => Article::where('status', 1)->get(), 'baner' => Event::all()->random(1)->first(), 'events' => Banner::all(),
-                'tags' => Category::all(), 'footer_events' => Event::orderByDesc('id')->limit(4)->get()
+                'tags' => Category::all(), 'footer_events' => Event::orderByDesc('id')->limit(4)->get(),
+                'statics' => Info::all()
             ]);
         });
     }
