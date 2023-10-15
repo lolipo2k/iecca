@@ -19,7 +19,7 @@ class Event extends Model
 
     protected $table = 'news';
 
-    protected $appends = ['imageUrl', 'galleryList', 'raiting'];
+    protected $appends = ['imageUrl', 'galleryList', 'raiting', 'categories'];
 
     protected $fillable = ['count'];
 
@@ -39,9 +39,18 @@ class Event extends Model
         return $this->hasOne(User::class, 'id', 'author_id');
     }
 
-    public function category(): BelongsTo
+    public function getCategoriesAttribute()
     {
-        return $this->belongsTo(Category::class, 'project_id', 'id');
+        $tags = Event::rightJoin('tags_to_news', 'tags_to_news.news_id', '=', 'news.id')
+            ->select("tags_to_news.*")->get();
+        if (isset($tags)) {
+            $data = [];
+            foreach ($tags as $key => $tag) {
+                $data[$key] = Category::find($tag->tag_id);
+            }
+            return $data;
+        }
+        return [];
     }
 
     public function reports(): HasMany

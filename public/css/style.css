@@ -466,12 +466,13 @@ header .header-content__right ul li img {
 .header-menu > .container > ul > li:first-child .second-menu li {
   font-size: 20px;
   color: #272727;
+  margin-top: 12px;
 }
 .header-menu > .container > ul > li:first-child .second-menu li a {
   font-weight: 700;
 }
-.header-menu > .container > ul > li:first-child .second-menu li:last-child {
-  margin-top: 12px;
+.header-menu > .container > ul > li:first-child .second-menu li:first-child {
+  margin-top: 0px;
 }
 .header-menu > .container > ul > li:first-child:hover .second-menu {
   z-index: 1;

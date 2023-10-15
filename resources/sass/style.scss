@@ -537,13 +537,14 @@ header {
                     li {
                         font-size: 20px;
                         color: #272727;
+                        margin-top: 12px;
 
                         a {
                             font-weight: 700;
                         }
 
-                        &:last-child {
-                            margin-top: 12px;
+                        &:first-child {
+                            margin-top: 0px;
                         }
                     }
                 }
