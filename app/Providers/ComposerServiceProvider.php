@@ -30,7 +30,8 @@ class ComposerServiceProvider extends ServiceProvider
             $view->with([
                 'articles' => Article::where('status', 1)->get(), 'baner' => Event::all()->random(1)->first(), 'events' => Banner::all(),
                 'tags' => Category::all(), 'footer_events' => Event::orderByDesc('id')->limit(4)->get(),
-                'statics' => Info::all()
+                'statics' => Info::all(),
+                'preview' => Event::where('preview', 1)->orderByDesc('id')->first()
             ]);
         });
     }

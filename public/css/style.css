@@ -585,7 +585,7 @@ main .container > .baner-description {
   width: 100%;
   background: rgba(13, 61, 96, 0.6);
   font-size: 20px;
-  color: #F5F5F5;
+  color: #F5F5F5 !important;
   padding: 15px 15px 18px 15px;
   text-align: center;
 }

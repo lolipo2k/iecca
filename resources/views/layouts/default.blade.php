@@ -152,9 +152,11 @@
                     </div>
                 </div>
             </div>
-            <div class="baner-description">
-                {{$baner->title_ru}}
-            </div>
+            @if(!empty($preview))
+            <a href="/event/{{$preview->id}}" class="baner-description">
+                {{$preview->title_ru}}
+            </a>
+            @endif
             @endif
             <div class="main-content row justify-content-between">
                 <div class="col-3 d-none d-lg-block">
@@ -184,6 +186,7 @@
                     </div>
                 </div>
                 @yield('content')
+                @if(Request::is('/'))
                 <div class="col-3 d-none d-lg-block">
                     <div class="section-title">
                         календарь
@@ -191,6 +194,7 @@
                     <div id="datepicker"></div>
                     <input type="hidden" id="datepicker_value">
                 </div>
+                @endif
             </div>
             <div class="event-content row">
                 @foreach($events as $item)
