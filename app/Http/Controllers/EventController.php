@@ -9,10 +9,15 @@ class EventController extends Controller
 {
     public function list(Request $request)
     {
-        $list = new Event();
-        $list = $list::where('status', 1);
-        if ($request->id) $list = $list->where('project_id', $request->id);
-        $list = $list->paginate(5);
+        if (!$request->id) {
+            $list = new Event();
+            $list = $list::where('status', 1)->paginate(5);
+        } else {
+            $list = Event::rightJoin('tags_to_news', 'tags_to_news.tags_id', '=', "{$request->id}")
+                ->where('news.status', 1)
+                ->where('tags_to_news.news_id', 'news.id')
+                ->select("news.*")->paginate(5);
+        }
 
         return view("eventList", compact('list'));
     }

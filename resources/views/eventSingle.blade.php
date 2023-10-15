@@ -92,7 +92,10 @@
                 Прочитано {{$item->count}} раз
             </div>
             <div class="info">
-                Опубликовано в <a href="{{ route('events', $item->category->id) }}">{{$item->category->name_ru}}</a>
+                Опубликовано в
+                @foreach($item->categories as $category)
+                <a href="{{ route('events', $category->id) }}">{{$category->name_ru}}</a>
+                @endforeach
             </div>
 
             <div class="info-auth">
