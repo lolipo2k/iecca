@@ -42,6 +42,7 @@ class Event extends Model
     public function getCategoriesAttribute()
     {
         $tags = Event::rightJoin('tags_to_news', 'tags_to_news.news_id', '=', 'news.id')
+            ->where("tags_to_news.news_id", $this->id)
             ->select("tags_to_news.*")->get();
         if (isset($tags)) {
             $data = [];
