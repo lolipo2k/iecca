@@ -6,6 +6,7 @@ use App\Http\Controllers\JournalController;
 use App\Http\Controllers\EventController;
 use App\Models\Info;
 use App\Models\Report;
+use App\Models\Content;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\RaitingController;
 use App\Http\Controllers\AuthController;
@@ -41,4 +42,8 @@ Route::get('auth/{id}', [AuthController::class, 'comments']);
 Route::get('/report/{id}', function ($id) {
     $item = Report::find($id);
     return view("reportSingle", compact('item'));
+});
+Route::get('/content/{id}', function ($id) {
+    $item = Content::find($id);
+    return view("contentSingle", compact('item'));
 });

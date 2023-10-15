@@ -926,6 +926,9 @@ main .main-content .single-content .single-reports .reports-list__item .report-f
 main .main-content .single-content .single-reports .reports-list__item .report-full.disbl {
   display: none;
 }
+main .main-content .single-content .single-contents {
+  margin-top: 40px;
+}
 main .main-content .single-content .single-contents__title {
   font-weight: 700;
   font-size: 22px;
@@ -936,6 +939,7 @@ main .main-content .single-content .single-contents ul {
 main .main-content .single-content .single-contents ul li {
   font-size: 20px;
   color: #0D3D60;
+  margin-top: 10px;
 }
 main .main-content .single-content .single-bottom {
   margin-top: 95px;

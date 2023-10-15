@@ -49,7 +49,7 @@
             <ul>
                 @foreach($item->contents as $content)
                 <li>
-                    <a href="/content/{$content->id}}">
+                    <a href="/content/{{$content->id}}">
                         {{$content->title_ru}}
                     </a>
                 </li>

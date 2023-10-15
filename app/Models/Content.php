@@ -12,8 +12,29 @@ class Content extends Model
 
     protected $table = 'marticle';
 
+    protected $appends = ['attachmentUrl'];
+
     public function user(): HasOne
     {
         return $this->hasOne(User::class, 'id', 'author_id');
+    }
+
+    public function getAttachmentUrlAttribute()
+    {
+        return $this->getMedia($this->attachment);
+    }
+
+    private function getMedia($item)
+    {
+        if ($item) {
+            $media = new Media();
+            $name = $media::find($item);
+            $format = explode('.', $name->name);
+            $name = $this->host . "/media/monitorings/{$name->table_id}/" . $name->id . '.' . end($format);
+
+            return $name;
+        }
+
+        return '';
     }
 }
