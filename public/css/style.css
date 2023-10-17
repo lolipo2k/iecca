@@ -682,10 +682,10 @@ main .main-content .article-wrap article .article-title {
   margin-top: 24px;
   color: #272727;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 18px;
 }
 main .main-content .article-wrap article .article-title a {
-  font-weight: 700;
+  font-weight: 4400;
 }
 main .main-content .article-wrap article .article-info {
   margin-top: 14px;
@@ -704,6 +704,11 @@ main .main-content .article-wrap article .article-link {
   color: rgba(39, 39, 39, 0.6);
   text-decoration-line: underline;
   font-size: 20px;
+}
+main .main-content .article-wrap__all {
+  color: #0D3D60;
+  margin-top: 20px;
+  font-size: 16px;
 }
 main .main-content .event-wrap article {
   margin-top: 67px;

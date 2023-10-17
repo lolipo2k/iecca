@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function __invoke()
     {
         $list = new Event();
-        $list = $list::where('status', 1)->paginate(5);
+        $list = $list::where('status', 1)->limit(10)->get();
 
         return view("home", compact('list'));
     }

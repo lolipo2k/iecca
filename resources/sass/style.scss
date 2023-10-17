@@ -785,10 +785,10 @@ main {
                     margin-top: 24px;
                     color: #272727;
                     text-transform: uppercase;
-                    font-size: 20px;
+                    font-size: 18px;
 
                     a {
-                        font-weight: 700;
+                        font-weight: 4400;
                     }
                 }
 
@@ -812,6 +812,12 @@ main {
                     text-decoration-line: underline;
                     font-size: 20px;
                 }
+            }
+
+            &__all {
+                color: #0D3D60;
+                margin-top: 20px;
+                font-size: 16px;
             }
         }
 
@@ -1087,6 +1093,7 @@ main {
 
             .single-contents {
                 margin-top: 40px;
+
                 &__title {
                     font-weight: 700;
                     font-size: 22px;
