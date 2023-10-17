@@ -85,7 +85,7 @@ input[type="checkbox"] {
     // Checked State
     &:checked+label {
         &:before {
-            background-image: url('../icons/check.svg');
+            background-image: url('public/icons/check.svg');
             background-position: center;
             background-size: 30px 20px;
             background-repeat: no-repeat;
@@ -414,10 +414,9 @@ header {
 
         &__left {
             .header-subtitle {
-                font-size: 20px;
+                font-size: 30px;
                 color: #0D3D60;
                 width: 560px;
-                padding-left: 13px;
 
                 @media screen and (max-width: 992px) {
                     padding-left: 0;
@@ -432,7 +431,7 @@ header {
 
             .header-title {
                 font-weight: 700;
-                font-size: 53px;
+                font-size: 85px;
                 color: #0D3D60;
                 text-transform: uppercase;
                 margin-top: 8px;
@@ -760,7 +759,7 @@ main {
                             content: '';
                             width: 26px;
                             height: 15px;
-                            background-image: url('../icons/bear.svg');
+                            background-image: url('public/icons/bear.svg');
                             background-repeat: no-repeat;
                             background-size: 100%;
                             background-color: rgba(0, 0, 0, 0);
@@ -773,7 +772,7 @@ main {
 
         .article-wrap {
             article {
-                margin-top: 60px;
+                margin-top: 30px;
 
                 .article-img {
                     img {
@@ -788,7 +787,7 @@ main {
                     font-size: 18px;
 
                     a {
-                        font-weight: 4400;
+                        font-weight: 400;
                     }
                 }
 
@@ -1154,6 +1153,7 @@ main {
 
                     img {
                         object-fit: cover;
+                        height: 150px;
                     }
                 }
 
@@ -1270,6 +1270,7 @@ main {
 
                     img {
                         object-fit: cover;
+                        height: 150px;
                     }
                 }
 
@@ -1378,7 +1379,7 @@ main {
 }
 
 footer {
-    padding: 44px 0 90px 0;
+    padding: 20px 0 30px 0;
     background: rgba(13, 61, 96, 0.20);
     margin-top: 46px;
 
@@ -1397,7 +1398,7 @@ footer {
     }
 
     .footer-menu {
-        margin-top: 100px;
+        margin-top: 40px;
 
         @media screen and (max-width: 500px) {
             margin-top: 30px;

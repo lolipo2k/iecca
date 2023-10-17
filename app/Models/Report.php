@@ -12,7 +12,7 @@ class Report extends Model
 
     protected $table = 'type';
 
-    protected $appends = ['attachmentUrl'];
+    protected $appends = ['attachmentUrl', 'imageUrl'];
 
     private $host;
 
@@ -33,6 +33,11 @@ class Report extends Model
     public function getAttachmentUrlAttribute()
     {
         return $this->getMedia($this->attachment);
+    }
+
+    public function getImageUrlAttribute()
+    {
+        return $this->getMedia($this->image);
     }
 
     private function getMedia($item)

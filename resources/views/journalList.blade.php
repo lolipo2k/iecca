@@ -27,11 +27,6 @@
                     {!! $item->intro_text_ru !!}
                 </div>
             </div>
-            <div class="arctic-download">
-                <a href="{{$item->attachmentUrl}}" target="_blank">
-                    скачать
-                </a>
-            </div>
         </div>
         @endforeach
         @if($list->lastPage() > 1)
@@ -39,7 +34,7 @@
             @if($list->currentPage() > 1)
             <div class="article-prev">
                 <a href="{{ route('journals') }}?page={{$list->currentPage() - 1}}">
-                    <img src="/icons/arrow-left.svg" alt="">
+                    <img src="public/icons/arrow-left.svg" alt="">
                 </a>
             </div>
             @endif
@@ -54,7 +49,7 @@
             @if($list->currentPage() != $list->lastPage())
             <div class="article-next">
                 <a href="{{ route('journals') }}?page={{$list->currentPage() + 1}}">
-                    <img src="/icons/arrow-right.svg" alt="">
+                    <img src="public/icons/arrow-right.svg" alt="">
                 </a>
             </div>
             @endif

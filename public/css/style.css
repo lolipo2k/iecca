@@ -75,7 +75,7 @@ input[type=checkbox] + label:before {
   border: 1px solid rgba(13, 61, 96, 0.5);
 }
 input[type=checkbox]:checked + label:before {
-  background-image: url("../icons/check.svg");
+  background-image: url("public/icons/check.svg");
   background-position: center;
   background-size: 30px 20px;
   background-repeat: no-repeat;
@@ -351,10 +351,9 @@ header .header-content {
   justify-content: space-between;
 }
 header .header-content__left .header-subtitle {
-  font-size: 20px;
+  font-size: 30px;
   color: #0D3D60;
   width: 560px;
-  padding-left: 13px;
 }
 @media screen and (max-width: 992px) {
   header .header-content__left .header-subtitle {
@@ -370,7 +369,7 @@ header .header-content__left .header-subtitle {
 }
 header .header-content__left .header-title {
   font-weight: 700;
-  font-size: 53px;
+  font-size: 85px;
   color: #0D3D60;
   text-transform: uppercase;
   margin-top: 8px;
@@ -666,14 +665,14 @@ main .main-content .arctic-review .article-pagination .article-list li.act {
   content: "";
   width: 26px;
   height: 15px;
-  background-image: url("../icons/bear.svg");
+  background-image: url("public/icons/bear.svg");
   background-repeat: no-repeat;
   background-size: 100%;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0;
 }
 main .main-content .article-wrap article {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 main .main-content .article-wrap article .article-img img {
   width: 100%;
@@ -685,7 +684,7 @@ main .main-content .article-wrap article .article-title {
   font-size: 18px;
 }
 main .main-content .article-wrap article .article-title a {
-  font-weight: 4400;
+  font-weight: 400;
 }
 main .main-content .article-wrap article .article-info {
   margin-top: 14px;
@@ -987,6 +986,7 @@ main .main-content .users-list__item .user-photo {
 }
 main .main-content .users-list__item .user-photo img {
   object-fit: cover;
+  height: 150px;
 }
 main .main-content .users-list__item .user-info {
   padding-left: 12px;
@@ -1085,6 +1085,7 @@ main .main-content .arctic-review__item .arctic-photo {
 }
 main .main-content .arctic-review__item .arctic-photo img {
   object-fit: cover;
+  height: 150px;
 }
 main .main-content .arctic-review__item .arctic-info {
   padding-left: 11px;
@@ -1173,7 +1174,7 @@ main .event-content .event-item .event-black {
 }
 
 footer {
-  padding: 44px 0 90px 0;
+  padding: 20px 0 30px 0;
   background: rgba(13, 61, 96, 0.2);
   margin-top: 46px;
 }
@@ -1189,7 +1190,7 @@ footer .tags-list a {
   margin: 0 3px;
 }
 footer .footer-menu {
-  margin-top: 100px;
+  margin-top: 40px;
 }
 @media screen and (max-width: 500px) {
   footer .footer-menu {

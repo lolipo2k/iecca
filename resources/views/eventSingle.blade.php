@@ -61,11 +61,12 @@
                     <div class="report-subject">
                         {{$report->name_ru}}
                     </div>
-                    <div class="report-title">
-                        {{$report->title}}
-                    </div>
                     <div class="report-name">
-                        {{ $report->user->fullName }}
+                        @if($item->author_name != '')
+                        {{ $item->author_name }}
+                        @else
+                        {{ $item->user->fullName }}
+                        @endif
                     </div>
                     <div class="report-description">
                         {!! $report->intro_text !!}
