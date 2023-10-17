@@ -6,7 +6,7 @@
         главная
     </div>
     <div class="article-wrap">
-        @foreach($list->items() as $item)
+        @foreach($list as $item)
         <article>
             <div class="article-title">
                 <a href="/event/{{$item->id}}">
