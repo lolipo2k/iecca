@@ -185,7 +185,7 @@
                         </div>
                     </div>
                     @if(!Request::is('/'))
-                    <div id="datepicker"></div>
+                    <div id="datepicker" class="mt-5"></div>
                     <input type="hidden" id="datepicker_value">
 
                     <div class="event-content row">
