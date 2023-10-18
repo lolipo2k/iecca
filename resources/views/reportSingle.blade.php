@@ -23,7 +23,7 @@
         @endif
         <div class="single-description">
             {!! $item->full_text !!}
-        </div> imageUrl
+        </div> 
         @if($item->attachmentUrl)
         <div class="single-btn">
             <a href="{{$item->attachmentUrl}}" target="_blank">

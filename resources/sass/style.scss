@@ -358,6 +358,7 @@ input[type="checkbox"] {
 header {
     padding: 39px 0 88px 0;
     background-image: url('../img/header/header-background.svg');
+    background-size: cover;
 
     @media screen and (max-width: 500px) {
         background-position: top;
@@ -1012,8 +1013,9 @@ main {
                     flex-wrap: wrap;
 
                     &__item {
-                        width: 240px;
+                        width: 45%;
                         position: relative;
+                        margin-top: 40px;
 
                         @media screen and (max-width: 768px) {
                             width: 100%;

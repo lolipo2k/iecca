@@ -302,6 +302,7 @@ input[type=checkbox]:disabled:checked + label:before {
 header {
   padding: 39px 0 88px 0;
   background-image: url("../img/header/header-background.svg");
+  background-size: cover;
 }
 @media screen and (max-width: 500px) {
   header {
@@ -866,8 +867,9 @@ main .main-content .single-content .single-reports .reports-list {
   flex-wrap: wrap;
 }
 main .main-content .single-content .single-reports .reports-list__item {
-  width: 240px;
+  width: 45%;
   position: relative;
+  margin-top: 40px;
 }
 @media screen and (max-width: 768px) {
   main .main-content .single-content .single-reports .reports-list__item {
