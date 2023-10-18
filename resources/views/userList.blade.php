@@ -29,7 +29,7 @@
             @if($list->currentPage() > 1)
             <div class="article-prev">
                 <a href="{{ route('users') }}?page={{$list->currentPage() - 1}}">
-                    <img src="public/icons/arrow-left.svg" alt="">
+                    <img src="/public/icons/arrow-left.svg" alt="">
                 </a>
             </div>
             @endif
@@ -44,7 +44,7 @@
             @if($list->currentPage() != $list->lastPage())
             <div class="article-next">
                 <a href="{{ route('users') }}?page={{$list->currentPage() + 1}}">
-                    <img src="public/icons/arrow-right.svg" alt="">
+                    <img src="/public/icons/arrow-right.svg" alt="">
                 </a>
             </div>
             @endif

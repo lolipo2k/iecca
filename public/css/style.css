@@ -75,7 +75,7 @@ input[type=checkbox] + label:before {
   border: 1px solid rgba(13, 61, 96, 0.5);
 }
 input[type=checkbox]:checked + label:before {
-  background-image: url("public/icons/check.svg");
+  background-image: url("/public/icons/check.svg");
   background-position: center;
   background-size: 30px 20px;
   background-repeat: no-repeat;
@@ -666,7 +666,7 @@ main .main-content .arctic-review .article-pagination .article-list li.act {
   content: "";
   width: 26px;
   height: 15px;
-  background-image: url("public/icons/bear.svg");
+  background-image: url("/public/icons/bear.svg");
   background-repeat: no-repeat;
   background-size: 100%;
   background-color: rgba(0, 0, 0, 0);

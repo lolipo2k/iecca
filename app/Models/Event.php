@@ -87,7 +87,7 @@ class Event extends Model
             $data = [];
             foreach ($media as $key => $value) {
                 $format = explode('.', $value->name);
-                $data[$key] = $name = $this->host . "/media/galleries/{$value->table_id}/" . $value->id . '.' . end($format);
+                $data[$key] = $name = $this->host . "/media/galleries/{$value->table_id}/" . $value->id . '.' . strtolower(end($format));
             }
             return $data;
         }

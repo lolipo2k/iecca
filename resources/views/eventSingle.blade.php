@@ -62,10 +62,10 @@
                         {{$report->name_ru}}
                     </div>
                     <div class="report-name">
-                        @if($item->author_name != '')
-                        {{ $item->author_name }}
+                        @if($report->author_name != '')
+                        {{ $report->author_name }}
                         @else
-                        {{ $item->user->fullName }}
+                        {{ $report->user->fullName }}
                         @endif
                     </div>
                     <div class="report-description">
