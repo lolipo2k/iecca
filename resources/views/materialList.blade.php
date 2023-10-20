@@ -67,7 +67,7 @@
             </div>
         </article>
         @endforeach
-        @foreach($list->items() as $item)
+        @foreach($baners_content as $item)
         <article>
             <div class="article-top">
                 <div class="article-top__left">
