@@ -52,7 +52,7 @@ Route::get('/content/{id}', function ($id) {
 Route::get('/material', function () {
 
     $baners_event = Event::where('status', 1)->get();
-    $baners_report = Report::where('status', 1)->get();
+    $baners_report = Report::get();
     $baners_content = Content::where('status', 1)->get();
 
     return view("materialList", compact('baners_event', 'baners_report', 'baners_content'));
