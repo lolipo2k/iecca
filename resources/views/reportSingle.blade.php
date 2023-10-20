@@ -16,6 +16,9 @@
         <div class="single-title">
             {{$item->name_ru}}
         </div>
+        <div class="single-description">
+            {!! $item->intro_text !!}
+        </div>
         @if($item->imageUrl != '')
         <div class="single-img">
             <img src="{{$item->imageUrl}}" alt="">

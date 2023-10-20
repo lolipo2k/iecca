@@ -18,7 +18,6 @@
                     </div>
                 </a>
                 <div class="arctic-name">
-                    {{$item->user->fullName}}
                     <span>
                         {{ date('d-m-y', strtotime($item->created_at)) }}
                     </span>

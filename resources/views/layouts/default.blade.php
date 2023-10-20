@@ -142,10 +142,6 @@
                         </div>
                         <div class="baner-description">
                             {!! $baner->intro_text_ru !!}
-
-                            <div class="baner-description__name">
-                                {{$baner->user->fullName}}
-                            </div>
                         </div>
                         <div class="baner-more">
                             <a href="/event/{{$baner->id}}">
