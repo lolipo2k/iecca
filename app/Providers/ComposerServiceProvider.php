@@ -27,12 +27,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
 
         View::composer(['layouts.default'], function ($view) {
-            $test = Event::crossJoin('type')
-                ->crossJoin('marticle')
-                ->where('news.onmain', 1)
-                ->where('marticle.onmain', 1)
-                ->where('type.onmain', 1)
-                ->select("news.*", "marticle.*", "type.*")->get();
+            $test = Event::with('type', 'marticle')->where('onmain', 1)->get();
             dd($test);
             $view->with([
                 'articles' => Article::where('status', 1)->orderByDesc('id')->get(),
