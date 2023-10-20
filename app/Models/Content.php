@@ -24,7 +24,7 @@ class Content extends Model
         return $this->getMedia($this->pdf);
     }
 
-    public function getImagetUrlAttribute()
+    public function getImageUrlAttribute()
     {
         return $this->getMedia($this->image);
     }
