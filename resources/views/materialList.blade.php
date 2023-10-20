@@ -1,3 +1,6 @@
+@extends('layouts.default')
+
+@section('content')
 <div class="col-12 col-lg-8">
     <div class="event-wrap">
         @foreach($baners_event as $item)
@@ -100,3 +103,4 @@
         @endforeach
     </div>
 </div>
+@stop
