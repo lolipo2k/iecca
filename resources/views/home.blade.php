@@ -31,7 +31,7 @@
         @foreach($content as $item)
         <article>
             <div class="article-title">
-                <a href="/event/{{$item->id}}">
+                <a href="/content/{{$item->id}}">
                     <b>{{ date('d-m-y', strtotime($item->created_at)) }}</b>
                     {{$item->title_ru}}
                 </a>
