@@ -99,10 +99,13 @@ class Event extends Model
         if ($item) {
             $media = new Media();
             $name = $media::find($item);
-            $format = explode('.', $name->name);
-            $name = $this->host . "/media/monitorings/{$name->table_id}/" . $name->id . '.' . end($format);
+            if (isset($name)) {
+                $format = explode('.', $name->name);
+                $name = $this->host . "/media/monitorings/{$name->table_id}/" . $name->id . '.' . end($format);
 
-            return $name;
+                return $name;
+            }
+            return '';
         }
 
         return '';
