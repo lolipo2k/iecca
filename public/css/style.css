@@ -502,6 +502,14 @@ main .main-baner {
   width: 100%;
   position: relative;
 }
+main .main-baner .main-wrap .slick-dots li button {
+  width: 12px;
+  height: 12px;
+}
+main .main-baner .main-wrap .slick-dots li.slick-active button {
+  width: 15px;
+  height: 15px;
+}
 main .main-baner__background {
   width: 100%;
 }
@@ -833,6 +841,9 @@ main .main-content .single-content .single-description {
   font-size: 20px;
   color: #272727;
   margin-top: 20px;
+}
+main .main-content .single-content .single-description.intro > p {
+  font-weight: bold !important;
 }
 main .main-content .single-content .single-description a {
   text-decoration: underline !important;
