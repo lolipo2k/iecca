@@ -354,7 +354,13 @@ header .header-content {
 header .header-content__left .header-subtitle {
   font-size: 30px;
   color: #0D3D60;
-  width: 560px;
+  width: 760px;
+  letter-spacing: -1px;
+}
+@media screen and (max-width: 1200px) {
+  header .header-content__left .header-subtitle {
+    width: 560px;
+  }
 }
 @media screen and (max-width: 992px) {
   header .header-content__left .header-subtitle {
@@ -671,6 +677,9 @@ main .main-content .arctic-review .article-pagination .article-list li.act {
   background-size: 100%;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0;
+}
+main .main-content .article-wrap {
+  margin-top: 50px;
 }
 main .main-content .article-wrap article {
   margin-top: 30px;

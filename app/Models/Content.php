@@ -12,7 +12,7 @@ class Content extends Model
 
     protected $table = 'marticle';
 
-    protected $appends = ['attachmentUrl'];
+    protected $appends = ['attachmentUrl', 'imageUrl'];
 
     public function user(): HasOne
     {
@@ -22,6 +22,11 @@ class Content extends Model
     public function getAttachmentUrlAttribute()
     {
         return $this->getMedia($this->pdf);
+    }
+
+    public function getImagetUrlAttribute()
+    {
+        return $this->getMedia($this->image);
     }
 
     private function getMedia($item)

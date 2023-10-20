@@ -41,7 +41,7 @@
                 скачать
             </a>
         </div>
-        @if(!empty($item->contents))
+        @if(count($item->contents) > 0)
         <div class="single-contents">
             <div class="single-contents__title">
                 Статьи по теме:

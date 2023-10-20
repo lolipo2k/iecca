@@ -13,6 +13,12 @@
             {{$item->title_ru}}
         </div>
         <div class="single-description">
+            {!! $item->text_ru !!}
+        </div>
+        <div class="single-img">
+            <img src="{{$item->imageUrl}}" alt="">
+        </div>
+        <div class="single-description">
             {!! $item->intro_text_ru !!}
         </div>
         @if($item->attachmentUrl)

@@ -417,7 +417,12 @@ header {
             .header-subtitle {
                 font-size: 30px;
                 color: #0D3D60;
-                width: 560px;
+                width: 760px;
+                letter-spacing: -1px;
+
+                @media screen and (max-width: 1200px) {
+                    width: 560px;
+                }
 
                 @media screen and (max-width: 992px) {
                     padding-left: 0;
@@ -772,6 +777,7 @@ main {
         }
 
         .article-wrap {
+            margin-top: 50px;
             article {
                 margin-top: 30px;
 
