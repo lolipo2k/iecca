@@ -27,8 +27,8 @@ class ComposerServiceProvider extends ServiceProvider
     {
 
         View::composer(['layouts.default'], function ($view) {
-            $test = Event::join('type', 'news.onmain', '=', 'type.onmain')
-                ->join('marticle', 'news.onmain', '=', 'marticle.onmain')
+            $test = Event::rightJoin('type', 'news.onmain', '=', 'type.onmain')
+                ->rightJoin('marticle', 'news.onmain', '=', 'marticle.onmain')
                 ->where('news.onmain', 1)->select("news.*", "marticle.*", "type.*")->get();
             dd($test);
             $view->with([
