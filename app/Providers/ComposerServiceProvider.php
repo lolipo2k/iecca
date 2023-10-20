@@ -29,8 +29,6 @@ class ComposerServiceProvider extends ServiceProvider
     {
         
         View::composer(['layouts.default'], function ($view) {
-            $test = Event::with('type', 'marticle')->where('onmain', 1)->get();
-            dd($test);
             $view->with([
                 'articles' => Article::where('status', 1)->orderByDesc('id')->get(),
                 'baners_event' => Event::where('onmain', 1)->get(),
