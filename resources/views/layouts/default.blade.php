@@ -130,25 +130,49 @@
     <main>
         <div class="container">
             @if(Request::is('/'))
-            <div class="main-baner">
-                <div class="main-baner__background">
-                    <img src="{{$baner->imageUrl}}" alt="">
-                </div>
-                <div class="main-baner__content">
-                    <div class="baner-title">
-                        {{$baner->title_ru}}
+            <div class="main-wrap">
+                <div class="main-baner">
+                    <div class="main-baner__background">
+                        <img src="{{$baner->imageUrl}}" alt="">
                     </div>
-                    <div class="baner-description">
-                        {!! $baner->intro_text_ru !!}
+                    <div class="main-baner__content">
+                        <div class="baner-title">
+                            {{$baner->title_ru}}
+                        </div>
+                        <div class="baner-description">
+                            {!! $baner->intro_text_ru !!}
 
-                        <div class="baner-description__name">
-                            {{$baner->user->fullName}}
+                            <div class="baner-description__name">
+                                {{$baner->user->fullName}}
+                            </div>
+                        </div>
+                        <div class="baner-more">
+                            <a href="/event/{{$baner->id}}">
+                                ПОДРОБНЕЕ
+                            </a>
                         </div>
                     </div>
-                    <div class="baner-more">
-                        <a href="/event/{{$baner->id}}">
-                            ПОДРОБНЕЕ
-                        </a>
+                </div>
+                <div class="main-baner">
+                    <div class="main-baner__background">
+                        <img src="{{$baner->imageUrl}}" alt="">
+                    </div>
+                    <div class="main-baner__content">
+                        <div class="baner-title">
+                            {{$baner->title_ru}}
+                        </div>
+                        <div class="baner-description">
+                            {!! $baner->intro_text_ru !!}
+
+                            <div class="baner-description__name">
+                                {{$baner->user->fullName}}
+                            </div>
+                        </div>
+                        <div class="baner-more">
+                            <a href="/event/{{$baner->id}}">
+                                ПОДРОБНЕЕ
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

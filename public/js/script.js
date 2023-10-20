@@ -33,6 +33,18 @@ $(document).ready(function () {
         nextArrow: "<button type='button' class='slick-next pull-right'><img src='/public/icons/arrow-right.svg'></button>"
     });
 
+    $(".main-wrap").slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: false,
+        speed: 2000,
+        fade: true,
+    });
+
     $('.single-photo__wrap').slick({
         infinite: true,
         slidesToShow: 1,
