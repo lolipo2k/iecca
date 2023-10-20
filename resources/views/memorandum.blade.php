@@ -3,6 +3,9 @@
 @section('content')
 <div class="col-12 col-lg-8">
     <div class="single-content">
+        <div class="single-date">
+            {{ date('d-m-y h:i', strtotime($item->created_at)) }}
+        </div>
         <div class="single-title">
             {{$item->title_ru}}
         </div>

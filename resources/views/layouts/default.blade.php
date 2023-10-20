@@ -192,7 +192,11 @@
                             {!! $baner->text_ru !!}
 
                             <div class="baner-description__name">
+                                @if($baner->author_name == '')
                                 {{$baner->user->fullName}}
+                                @else
+                                {{$baner->author_name}}
+                                @endif
                             </div>
                         </div>
                         <div class="baner-more">

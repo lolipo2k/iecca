@@ -7,6 +7,9 @@
     </div>
     <div class="single-content">
         <div class="single-date">
+            {{ date('d-m-y h:i', strtotime($item->created_at)) }}
+        </div>
+        <div class="single-date">
             @if($item->author_name != '')
             {{ $item->author_name }}
             @else

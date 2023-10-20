@@ -7,7 +7,14 @@
     </div>
     <div class="single-content">
         <div class="single-date">
-            {{ $item->user->fullName }}
+            {{ date('d-m-y h:i', strtotime($item->created_at)) }}
+        </div>
+        <div class="single-date">
+            @if($baner->author_name == '')
+            {{$baner->user->fullName}}
+            @else
+            {{$baner->author_name}}
+            @endif
         </div>
         <div class="single-title">
             {{$item->title_ru}}
