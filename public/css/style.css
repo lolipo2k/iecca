@@ -498,17 +498,17 @@ main {
     margin-top: 20px;
   }
 }
-main .main-baner {
-  width: 100%;
-  position: relative;
-}
-main .main-baner .main-wrap .slick-dots li button {
+main .main-wrap .slick-dots li button {
   width: 12px;
   height: 12px;
 }
-main .main-baner .main-wrap .slick-dots li.slick-active button {
+main .main-wrap .slick-dots li.slick-active button {
   width: 15px;
   height: 15px;
+}
+main .main-baner {
+  width: 100%;
+  position: relative;
 }
 main .main-baner__background {
   width: 100%;
