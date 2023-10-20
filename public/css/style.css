@@ -842,6 +842,9 @@ main .main-content .single-content .single-description {
   color: #272727;
   margin-top: 20px;
 }
+main .main-content .single-content .single-description.intro {
+  font-weight: bold !important;
+}
 main .main-content .single-content .single-description.intro > p {
   font-weight: bold !important;
 }
