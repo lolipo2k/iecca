@@ -3,6 +3,9 @@
 @section('content')
 <div class="col-12 col-lg-5">
     <div class="article-wrap">
+        <h4>
+            Последние мероприятия:
+        </h4>
         @foreach($list as $item)
         <article>
             <div class="article-title">
