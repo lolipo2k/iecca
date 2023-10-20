@@ -73,6 +73,12 @@
         height: 600px;
     }
 </style>
+<style>
+    .single-description ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+</style>
 @stop
 @section('scripts')
 <script src="{{asset('/js/html2canvas.min.js')}}"></script>

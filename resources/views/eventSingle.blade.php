@@ -30,6 +30,9 @@
             </div>
             (<span>{{$item->raiting[1]}}</span> голосов)
         </div>
+        <div class="single-description">
+            {!! $item->intro_text_ru !!}
+        </div>
         <div class="single-img">
             <img src="{{$item->imageUrl}}" alt="">
         </div>
@@ -105,4 +108,10 @@
         </div>
     </div>
 </div>
+<style>
+    .single-description ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+</style>
 @stop

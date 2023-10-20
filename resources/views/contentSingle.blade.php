@@ -30,4 +30,10 @@
         @endif
     </div>
 </div>
+<style>
+    .single-description ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+</style>
 @stop

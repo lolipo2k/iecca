@@ -23,7 +23,7 @@
         @endif
         <div class="single-description">
             {!! $item->full_text !!}
-        </div> 
+        </div>
         @if($item->attachmentUrl)
         <div class="single-btn">
             <a href="{{$item->attachmentUrl}}" target="_blank">
@@ -33,4 +33,10 @@
         @endif
     </div>
 </div>
+<style>
+    .single-description ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+</style>
 @stop
