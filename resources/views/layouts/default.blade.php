@@ -131,6 +131,7 @@
         <div class="container">
             @if(Request::is('/'))
             <div class="main-wrap">
+                @foreach($baners as $baner)
                 <div class="main-baner">
                     <div class="main-baner__background">
                         <img src="{{$baner->imageUrl}}" alt="">
@@ -143,7 +144,11 @@
                             {!! $baner->intro_text_ru !!}
 
                             <div class="baner-description__name">
+                                @if($baner->user)
                                 {{$baner->user->fullName}}
+                                @else
+                                {{$baner->author_name}}
+                                @endif
                             </div>
                         </div>
                         <div class="baner-more">
@@ -153,28 +158,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="main-baner">
-                    <div class="main-baner__background">
-                        <img src="{{$baner->imageUrl}}" alt="">
-                    </div>
-                    <div class="main-baner__content">
-                        <div class="baner-title">
-                            {{$baner->title_ru}}
-                        </div>
-                        <div class="baner-description">
-                            {!! $baner->intro_text_ru !!}
-
-                            <div class="baner-description__name">
-                                {{$baner->user->fullName}}
-                            </div>
-                        </div>
-                        <div class="baner-more">
-                            <a href="/event/{{$baner->id}}">
-                                ПОДРОБНЕЕ
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             @if(!empty($preview))
             <a href="/event/{{$preview->id}}" class="baner-description">

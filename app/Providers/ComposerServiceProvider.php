@@ -28,8 +28,13 @@ class ComposerServiceProvider extends ServiceProvider
 
         View::composer(['layouts.default'], function ($view) {
             $view->with([
-                'articles' => Article::where('status', 1)->orderByDesc('id')->get(), 'baner' => Event::all()->random(1)->first(), 'events' => Banner::all(),
-                'tags' => Category::all(), 'footer_events' => Event::orderByDesc('id')->limit(4)->get(),
+                'articles' => Article::where('status', 1)->orderByDesc('id')->get(), 
+                'baners' => Event::join('type', 'news.onmain', '=', 'type.onmain')
+                ->join('marticle', 'marticle.onmain', '=', 'marticle.onmain')
+                ->where('news.onmain', 1)->select("*")->get(), 
+                'events' => Banner::all(),
+                'tags' => Category::all(), 
+                'footer_events' => Event::orderByDesc('id')->limit(4)->get(),
                 'statics' => Info::all(),
                 'preview' => Event::where('preview', 1)->orderByDesc('id')->first()
             ]);
