@@ -165,7 +165,7 @@
                             {{$baner->title_ru}}
                         </div>
                         <div class="baner-description">
-                            {!! $baner->intro_text_ru !!}
+                            {!! $baner->intro_text !!}
 
                             <div class="baner-description__name">
                                 @if($baner->author_name == '')
@@ -193,7 +193,7 @@
                             {{$baner->title_ru}}
                         </div>
                         <div class="baner-description">
-                            {!! $baner->intro_text_ru !!}
+                            {!! $baner->text_ru !!}
 
                             <div class="baner-description__name">
                                 {{$baner->user->fullName}}
