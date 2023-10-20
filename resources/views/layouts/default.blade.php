@@ -162,7 +162,7 @@
                     </div>
                     <div class="main-baner__content">
                         <div class="baner-title">
-                            {{$baner->title_ru}}
+                            {{$baner->name_ru}}
                         </div>
                         <div class="baner-description">
                             {!! $baner->intro_text !!}

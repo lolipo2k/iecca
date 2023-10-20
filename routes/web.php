@@ -7,6 +7,7 @@ use App\Http\Controllers\EventController;
 use App\Models\Info;
 use App\Models\Report;
 use App\Models\Content;
+use App\Models\Event;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\RaitingController;
 use App\Http\Controllers\AuthController;
@@ -46,4 +47,13 @@ Route::get('/report/{id}', function ($id) {
 Route::get('/content/{id}', function ($id) {
     $item = Content::find($id);
     return view("contentSingle", compact('item'));
+});
+
+Route::get('/material', function () {
+
+    $baners_event = Event::where('status', 1)->get();
+    $baners_report = Report::where('status', 1)->get();
+    $baners_content = Content::where('status', 1)->get();
+
+    return view("materialList", compact('baners_event', 'baners_report', 'baners_content'));
 });

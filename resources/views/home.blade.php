@@ -18,7 +18,7 @@
             <div class="article-title">
                 <a href="/report/{{$item->id}}">
                     <b>{{ date('d-m-y', strtotime($item->created_at)) }}</b>
-                    {{$item->title_ru}}
+                    {{$item->name_ru}}
                 </a>
             </div>
         </article>
@@ -34,7 +34,7 @@
         </article>
         @endforeach
         <div class="article-wrap__all">
-            <a href="/event/list">
+            <a href="/material">
                 Все материалы
             </a>
         </div>
