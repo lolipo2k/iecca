@@ -682,13 +682,13 @@ main .main-content .article-wrap {
   margin-top: 20px;
 }
 main .main-content .article-wrap article {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 main .main-content .article-wrap article .article-img img {
   width: 100%;
 }
 main .main-content .article-wrap article .article-title {
-  margin-top: 24px;
+  margin-top: 15px;
   color: #272727;
   text-transform: uppercase;
   font-size: 18px;
