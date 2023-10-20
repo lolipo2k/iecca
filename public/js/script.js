@@ -39,7 +39,7 @@ $(document).ready(function () {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        dots: false,
+        dots: true,
         arrows: false,
         speed: 2000,
         fade: true,

@@ -31,7 +31,9 @@
             (<span>{{$item->raiting[1]}}</span> голосов)
         </div>
         <div class="single-description">
-            {!! $item->intro_text_ru !!}
+            <b>
+                {!! $item->intro_text_ru !!}
+            </b>
         </div>
         <div class="single-img">
             <img src="{{$item->imageUrl}}" alt="">
