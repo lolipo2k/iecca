@@ -131,7 +131,7 @@
         <div class="container">
             @if(Request::is('/'))
             <div class="main-wrap">
-                @foreach($baners as $baner)
+                @foreach($baners_event as $baner)
                 <div class="main-baner">
                     <div class="main-baner__background">
                         <img src="{{$baner->imageUrl}}" alt="">
@@ -144,7 +144,31 @@
                             {!! $baner->intro_text_ru !!}
 
                             <div class="baner-description__name">
-                                @if($baner->user)
+                                {{$baner->user->fullName}}
+                            </div>
+                        </div>
+                        <div class="baner-more">
+                            <a href="/event/{{$baner->id}}">
+                                ПОДРОБНЕЕ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                @foreach($baners_report as $baner)
+                <div class="main-baner">
+                    <div class="main-baner__background">
+                        <img src="{{$baner->imageUrl}}" alt="">
+                    </div>
+                    <div class="main-baner__content">
+                        <div class="baner-title">
+                            {{$baner->title_ru}}
+                        </div>
+                        <div class="baner-description">
+                            {!! $baner->intro_text_ru !!}
+
+                            <div class="baner-description__name">
+                                @if($baner->author_name == '')
                                 {{$baner->user->fullName}}
                                 @else
                                 {{$baner->author_name}}
@@ -152,7 +176,31 @@
                             </div>
                         </div>
                         <div class="baner-more">
-                            <a href="/event/{{$baner->id}}">
+                            <a href="/report/{{$baner->id}}">
+                                ПОДРОБНЕЕ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                @foreach($baners_content as $baner)
+                <div class="main-baner">
+                    <div class="main-baner__background">
+                        <img src="{{$baner->imageUrl}}" alt="">
+                    </div>
+                    <div class="main-baner__content">
+                        <div class="baner-title">
+                            {{$baner->title_ru}}
+                        </div>
+                        <div class="baner-description">
+                            {!! $baner->intro_text_ru !!}
+
+                            <div class="baner-description__name">
+                                {{$baner->user->fullName}}
+                            </div>
+                        </div>
+                        <div class="baner-more">
+                            <a href="/content/{{$baner->id}}">
                                 ПОДРОБНЕЕ
                             </a>
                         </div>

@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Article;
 use App\Models\Event;
+use App\Models\Report;
+use App\Models\Content;
 use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Info;
@@ -25,15 +27,15 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
+        
         View::composer(['layouts.default'], function ($view) {
             $test = Event::with('type', 'marticle')->where('onmain', 1)->get();
             dd($test);
             $view->with([
                 'articles' => Article::where('status', 1)->orderByDesc('id')->get(),
-                'baners' => Event::join('type', 'news.onmain', '=', 'type.onmain')
-                    ->join('marticle', 'marticle.onmain', '=', 'marticle.onmain')
-                    ->where('news.onmain', 1)->select("*")->get(),
+                'baners_event' => Event::where('onmain', 1)->get(),
+                'baners_report' => Report::where('onmain', 1)->get(),
+                'baners_content' => Content::where('onmain', 1)->get(),
                 'events' => Banner::all(),
                 'tags' => Category::all(),
                 'footer_events' => Event::orderByDesc('id')->limit(4)->get(),
