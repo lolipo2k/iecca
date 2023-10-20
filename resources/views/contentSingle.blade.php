@@ -12,7 +12,7 @@
         <div class="single-title">
             {{$item->title_ru}}
         </div>
-        <div class="single-description">
+        <div class="single-description intro">
             {!! $item->text_ru !!}
         </div>
         <div class="single-img">

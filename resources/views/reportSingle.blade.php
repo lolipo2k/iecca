@@ -16,7 +16,7 @@
         <div class="single-title">
             {{$item->name_ru}}
         </div>
-        <div class="single-description">
+        <div class="single-description intro">
             {!! $item->intro_text !!}
         </div>
         @if($item->imageUrl != '')
