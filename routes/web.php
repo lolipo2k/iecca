@@ -55,5 +55,10 @@ Route::get('/material', function () {
     $baners_report = Report::get();
     $baners_content = Content::where('status', 1)->get();
 
+    $result = array_merge($baners_content, $baners_content);
+
+    $result = $result->paginate(5);
+    dd($result);
+
     return view("materialList", compact('baners_event', 'baners_report', 'baners_content'));
 });
