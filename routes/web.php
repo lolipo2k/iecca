@@ -56,6 +56,20 @@ Route::get('/material', function () {
     $baners_report = Report::get();
     $baners_content = Content::where('status', 1)->get();
 
+    foreach ($baners_event as $value) {
+        $value->url = "/event/";
+    }
+    foreach ($baners_report as $value) {
+        $value->url = "/report/";
+        $value->title_ru = $value->name_ru;
+        $value->intro_text_ru = $value->intro_text;
+    }
+    foreach ($baners_content as $value) {
+        $value->url = "/content/";
+        $value->intro_text_ru = $value->text_ru;
+    }
+
+
     $c = new Collection;
     $pages = $c->merge($baners_event)->merge($baners_report)->merge($baners_content);
     dd($pages);
