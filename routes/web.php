@@ -71,8 +71,7 @@ Route::get('/material', function () {
 
 
     $c = new Collection;
-    $pages = $c->merge($baners_event)->merge($baners_report)->merge($baners_content);
-    dd($pages);
+    $list = $c->merge($baners_event)->merge($baners_report)->merge($baners_content)->paginate(10);
 
-    return view("materialList", compact('baners_event', 'baners_report', 'baners_content'));
+    return view("materialList", compact('list'));
 });

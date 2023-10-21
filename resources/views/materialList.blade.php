@@ -3,19 +3,19 @@
 @section('content')
 <div class="col-12 col-lg-8">
     <div class="event-wrap">
-        @foreach($baners_event as $item)
+        @foreach($list->items() as $item)
         <article>
             <div class="article-top">
                 <div class="article-top__left">
                     <div class="article-img">
-                        <a href="/event/{{$item->id}}">
+                        <a href="{{$item->url}}{{$item->id}}">
                             <img src="{{$item->imageUrl}}" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="article-top__right">
                     <div class="article-title">
-                        <a href="/event/{{$item->id}}">
+                        <a href="{{$item->url}}{{$item->id}}">
                             {{$item->title_ru}}
                         </a>
                     </div>
@@ -29,7 +29,7 @@
             </div>
             <div class="article-bottom">
                 <div class="article-bottom__full">
-                    <a href="/event/{{$item->id}}">Читать полностью</a>
+                    <a href="{{$item->url}}{{$item->id}}">Читать полностью</a>
                 </div>
                 <div class="article-bottom__category">
                     @foreach($item->categories as $category)
@@ -39,68 +39,32 @@
             </div>
         </article>
         @endforeach
-        @foreach($baners_report as $item)
-        <article>
-            <div class="article-top">
-                <div class="article-top__left">
-                    <div class="article-img">
-                        <a href="/report/{{$item->id}}">
-                            <img src="{{$item->imageUrl}}" alt="">
+        @if($list->lastPage() > 1)
+        <div class="article-pagination">
+            @if($list->currentPage() > 1)
+            <div class="article-prev">
+                <a href="/material/?page={{$list->currentPage() - 1}}">
+                    <img src="/public/icons/arrow-left.svg" alt="">
+                </a>
+            </div>
+            @endif
+            <div class="article-list">
+                <ul>
+                    @for($i = 1; $i <= min($list->lastPage(), 5); $i++) <a href="/material/?page={{$i}}">
+                            <li class="{{($i == $list->currentPage()) ? 'act' : ''}}"></li>
                         </a>
-                    </div>
-                </div>
-                <div class="article-top__right">
-                    <div class="article-title">
-                        <a href="/report/{{$item->id}}">
-                            {{$item->name_ru}}
-                        </a>
-                    </div>
-                    <div class="article-date">
-                        {{ date('d-m-y', strtotime($item->created_at)) }}
-                    </div>
-                </div>
+                        @endfor
+                </ul>
             </div>
-            <div class="article-description">
-                {!! $item->intro_text !!}
+            @if($list->currentPage() != $list->lastPage())
+            <div class="article-next">
+                <a href="/material/?page={{$list->currentPage() + 1}}">
+                    <img src="/public/icons/arrow-right.svg" alt="">
+                </a>
             </div>
-            <div class="article-bottom">
-                <div class="article-bottom__full">
-                    <a href="/report/{{$item->id}}">Читать полностью</a>
-                </div>
-            </div>
-        </article>
-        @endforeach
-        @foreach($baners_content as $item)
-        <article>
-            <div class="article-top">
-                <div class="article-top__left">
-                    <div class="article-img">
-                        <a href="/content/{{$item->id}}">
-                            <img src="{{$item->imageUrl}}" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="article-top__right">
-                    <div class="article-title">
-                        <a href="/content/{{$item->id}}">
-                            {{$item->title_ru}}
-                        </a>
-                    </div>
-                    <div class="article-date">
-                        {{ date('d-m-y', strtotime($item->created_at)) }}
-                    </div>
-                </div>
-            </div>
-            <div class="article-description">
-                {!! $item->text_ru !!}
-            </div>
-            <div class="article-bottom">
-                <div class="article-bottom__full">
-                    <a href="/content/{{$item->id}}">Читать полностью</a>
-                </div>
-            </div>
-        </article>
-        @endforeach
+            @endif
+        </div>
+        @endif
     </div>
 </div>
 @stop
