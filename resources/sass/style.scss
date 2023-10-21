@@ -1365,7 +1365,7 @@ main {
             }
         }
 
-        .col-lg-4:nth-child(2n) {
+        .col-lg-4:nth-child(3n - 1) {
             .event-item {
                 margin: 20px auto 0 auto;
             }

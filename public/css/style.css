@@ -1159,7 +1159,7 @@ main .event-content {
 main .event-content .col-lg-4:nth-child(3n) .event-item {
   margin-left: auto;
 }
-main .event-content .col-lg-4:nth-child(2n) .event-item {
+main .event-content .col-lg-4:nth-child(3n-1) .event-item {
   margin: 20px auto 0 auto;
 }
 main .event-content .event-item {
