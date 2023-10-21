@@ -8,6 +8,7 @@ use App\Models\Info;
 use App\Models\Report;
 use App\Models\Content;
 use App\Models\Event;
+use Illuminate\Support\Collection;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\RaitingController;
 use App\Http\Controllers\AuthController;
@@ -54,6 +55,10 @@ Route::get('/material', function () {
     $baners_event = Event::where('status', 1)->get();
     $baners_report = Report::get();
     $baners_content = Content::where('status', 1)->get();
+
+    $c = new Collection;
+    $pages = $c->merge($baners_event)->merge($baners_report)->merge($baners_content);
+    dd($pages);
 
     return view("materialList", compact('baners_event', 'baners_report', 'baners_content'));
 });
