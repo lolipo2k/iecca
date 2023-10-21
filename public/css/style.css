@@ -517,7 +517,7 @@ main .main-baner__background {
 main .main-baner__background img {
   width: 100%;
   object-fit: cover;
-  min-height: 350px;
+  height: 600px;
 }
 main .main-baner__content {
   position: absolute;
