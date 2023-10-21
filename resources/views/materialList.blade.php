@@ -31,11 +31,6 @@
                 <div class="article-bottom__full">
                     <a href="{{$item->url}}{{$item->id}}">Читать полностью</a>
                 </div>
-                <div class="article-bottom__category">
-                    @foreach($item->categories as $category)
-                    <a href="{{ route('events', $category->id) }}">{{$category->name_ru}}</a>
-                    @endforeach
-                </div>
             </div>
         </article>
         @endforeach
