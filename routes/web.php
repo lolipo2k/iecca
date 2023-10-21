@@ -13,6 +13,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\RaitingController;
 use App\Http\Controllers\AuthController;
 use GuzzleHttp\Psr7\Request;
+use App\Helpers\PaginationHelper;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,7 +72,8 @@ Route::get('/material', function () {
 
 
     $c = new Collection;
-    $list = $c->merge($baners_event)->merge($baners_report)->merge($baners_content)->paginate(10);
+    $list = $c->merge($baners_event)->merge($baners_report)->merge($baners_content);
+    $list = PaginationHelper::paginate($list, 10);
 
     return view("materialList", compact('list'));
 });
