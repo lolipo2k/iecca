@@ -35,7 +35,7 @@ class ComposerServiceProvider extends ServiceProvider
                 'baners_report' => Report::where('onmain', 1)->get(),
                 'baners_content' => Content::where('onmain', 1)->get(),
                 'events' => Banner::all(),
-                'tags' => Category::orderByDesc('id')->all(),
+                'tags' => Category::orderByDesc('id')->get(),
                 'footer_events' => Event::orderByDesc('id')->limit(4)->get(),
                 'statics' => Info::all(),
                 'preview' => Event::where('preview', 1)->orderByDesc('id')->first()
