@@ -700,7 +700,7 @@ main {
     }
 
     .main-content {
-        margin-top: 89px;
+        margin-top: 35px;
 
         @media screen and (max-width: 500px) {
             margin-top: 20px;
@@ -1357,7 +1357,13 @@ main {
     }
 
     .event-content {
-        margin-top: 67px;
+        margin-top: 40px;
+
+        .col-lg-4:nth-child(3n) {
+            .event-item {
+                margin-left: auto;
+            }
+        }
 
         .event-item {
             width: calc(100% - 30px);
@@ -1483,6 +1489,12 @@ footer {
                 text-transform: uppercase;
                 color: #0D0D0D;
                 font-size: 13px;
+                padding-right: 45px;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 10px;
+                    margin-top: 5px;
+                }
             }
         }
 
