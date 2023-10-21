@@ -574,6 +574,10 @@ header {
 main {
     margin-top: 100px;
 
+    &.home {
+        margin-top: 0px;
+    }
+
     @media screen and (max-width: 500px) {
         margin-top: 20px;
     }
@@ -1072,7 +1076,6 @@ main {
 
                         .report-subject {
                             text-decoration-line: underline;
-                            text-transform: capitalize;
                             font-weight: 700;
                             font-size: 20px;
                             margin-bottom: 15px;

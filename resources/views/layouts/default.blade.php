@@ -127,7 +127,7 @@
             </ul>
         </div>
     </nav>
-    <main>
+    <main class="@if(Request::is('/')) home @endif">
         <div class="container">
             @if(Request::is('/'))
             <div class="main-wrap">

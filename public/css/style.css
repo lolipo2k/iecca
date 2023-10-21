@@ -493,6 +493,9 @@ header .header-content__right ul li img {
 main {
   margin-top: 100px;
 }
+main.home {
+  margin-top: 0px;
+}
 @media screen and (max-width: 500px) {
   main {
     margin-top: 20px;
@@ -920,7 +923,6 @@ main .main-content .single-content .single-reports .reports-list__item:nth-child
 }
 main .main-content .single-content .single-reports .reports-list__item .report-subject {
   text-decoration-line: underline;
-  text-transform: capitalize;
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 15px;
