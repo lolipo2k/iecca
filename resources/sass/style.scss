@@ -1365,6 +1365,12 @@ main {
             }
         }
 
+        .col-lg-4:nth-child(2n) {
+            .event-item {
+                margin: 20px auto 0 auto;
+            }
+        }
+
         .event-item {
             width: calc(100% - 30px);
             height: 200px;
@@ -1466,6 +1472,7 @@ footer {
 
             @media screen and (max-width: 500px) {
                 font-size: 14px;
+                margin-bottom: 10px;
             }
 
             &::after {
@@ -1494,6 +1501,7 @@ footer {
                 @media screen and (max-width: 500px) {
                     font-size: 10px;
                     margin-top: 5px;
+                    padding-right: 0px;
                 }
             }
         }
