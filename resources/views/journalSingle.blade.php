@@ -30,6 +30,9 @@
             </div>
             (<span>{{$item->raiting[1]}}</span> голосов)
         </div>
+        <div class="single-description intro">
+            {!! $item->intro_text_ru !!}
+        </div>
         <div class="sungle-journal">
             <div class="flip-book-container" src="{{$item->attachmentUrl}}"></div>
         </div>
