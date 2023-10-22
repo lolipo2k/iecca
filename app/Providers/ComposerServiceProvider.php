@@ -52,7 +52,7 @@ class ComposerServiceProvider extends ServiceProvider
 
 
             $c = new Collection;
-            $list = $c->merge($baners_event)->merge($baners_report)->merge($baners_content)->sortByDesc('created_at')->slice(0, 4);
+            $list = $c->merge($baners_event)->merge($baners_report)->merge($baners_content)->sortByDesc('created_at')->slice(0, 5);
 
             $view->with([
                 'articles' => Article::where('status', 1)->orderByDesc('id')->get(),
