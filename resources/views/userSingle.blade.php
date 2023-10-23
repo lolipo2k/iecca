@@ -17,7 +17,7 @@
                 {!! $item->comment_ru !!}
             </div>
         </div>
-        @if(count($item->events) > 0)
+        @if(count($item->events) > 0 || count($item->reports) > 0)
         <div class="user-single__articles">
             <div>
                 материалы
