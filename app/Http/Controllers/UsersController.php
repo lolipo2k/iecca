@@ -16,7 +16,6 @@ class UsersController extends Controller
     public function single(Request $request)
     {
         $item = User::find($request->id);
-        dd($item->reports);
         return view("userSingle", compact('item'));
     }
 }
