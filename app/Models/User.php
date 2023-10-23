@@ -28,7 +28,7 @@ class User extends Authenticatable
 
     public function reports(): HasMany
     {
-        return $this->hasMany(Report::class, 'author_id', 'id')->where('status', 1);
+        return $this->hasMany(Report::class, 'author_id', 'id');
     }
 
     public function getFullNameAttribute()
