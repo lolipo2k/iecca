@@ -12,7 +12,7 @@ class JournalController extends Controller
         $list = new Article();
         $list = $list::where('status', 1);
         if ($request->id) $list = $list->where('direction_id', $request->id);
-        $list = $list->orderByDesc('id')->paginate(5);
+        $list = $list->orderByDesc('created_at')->paginate(5);
 
         return view("journalList", compact('list'));
     }

@@ -5,6 +5,11 @@
   line-height: normal;
 }
 
+tbody, td, tfoot, th, thead, tr {
+  border-width: inherit !important;
+  border-style: solid !important;
+}
+
 body {
   background: #F5F5F5;
 }
@@ -494,7 +499,7 @@ main {
   margin-top: 100px;
 }
 main.home {
-  margin-top: 0px;
+  margin-top: 40px;
 }
 @media screen and (max-width: 500px) {
   main {

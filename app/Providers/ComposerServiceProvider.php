@@ -58,10 +58,10 @@ class ComposerServiceProvider extends ServiceProvider
                 'articles' => Article::where('status', 1)->orderByDesc('id')->get(),
                 'slider' => $list,
                 'events' => Banner::all(),
-                'tags' => Category::orderByDesc('id')->get(),
-                'footer_events' => Event::orderByDesc('id')->limit(4)->get(),
+                'tags' => Category::orderByDesc('created_at')->get(),
+                'footer_events' => Event::orderByDesc('created_at')->limit(4)->get(),
                 'statics' => Info::all(),
-                'preview' => Event::where('preview', 1)->orderByDesc('id')->first()
+                'preview' => Event::where('preview', 1)->orderByDesc('created_at')->first()
             ]);
         });
     }

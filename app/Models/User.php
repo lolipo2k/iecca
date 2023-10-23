@@ -26,6 +26,11 @@ class User extends Authenticatable
         return $this->hasMany(Event::class, 'author_id', 'id')->where('status', 1);
     }
 
+    public function reports(): HasMany
+    {
+        return $this->hasMany(Report::class, 'author_id', 'id')->where('status', 1);
+    }
+
     public function getFullNameAttribute()
     {
         if ($this->last_name_ru || $this->first_name_ru) {
@@ -79,5 +84,4 @@ class User extends Authenticatable
     {
         return $this->password_hash;
     }
-
 }

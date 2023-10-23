@@ -28,6 +28,11 @@
                     <a href="/event/{{$event->id}}">{{$event->title_ru}}</a>
                 </li>
                 @endforeach
+                @foreach($item->reports as $event)
+                <li>
+                    <a href="/report/{{$event->id}}">{{$event->name_ru}}</a>
+                </li>
+                @endforeach
             </ul>
         </div>
         @endif
