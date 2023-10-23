@@ -545,7 +545,7 @@ main .main-baner__background {
 }
 @media screen and (max-width: 500px) {
   main .main-baner__background {
-    height: 3500px;
+    height: 350px;
   }
 }
 main .main-baner__background img {
@@ -555,7 +555,7 @@ main .main-baner__background img {
 }
 @media screen and (max-width: 500px) {
   main .main-baner__background img {
-    height: 3500px;
+    height: 350px;
   }
 }
 main .main-baner__content {
