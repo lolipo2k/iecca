@@ -625,10 +625,18 @@ main {
             width: 100%;
             height: 600px;
 
+            @media screen and (max-width: 500px) {
+                height: 3500px;
+            }
+
             img {
                 width: 100%;
                 object-fit: cover;
                 height: 600px;
+
+                @media screen and (max-width: 500px) {
+                    height: 3500px;
+                }
             }
         }
 
@@ -657,7 +665,7 @@ main {
                 text-transform: uppercase;
 
                 @media screen and (max-width: 500px) {
-                    font-size: 25px;
+                    font-size: 16px;
                 }
             }
 
@@ -675,7 +683,7 @@ main {
                 }
 
                 @media screen and (max-width: 500px) {
-                    font-size: 16px;
+                    font-size: 14px;
                     height: 125px;
                 }
 

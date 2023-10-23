@@ -543,10 +543,20 @@ main .main-baner__background {
   width: 100%;
   height: 600px;
 }
+@media screen and (max-width: 500px) {
+  main .main-baner__background {
+    height: 3500px;
+  }
+}
 main .main-baner__background img {
   width: 100%;
   object-fit: cover;
   height: 600px;
+}
+@media screen and (max-width: 500px) {
+  main .main-baner__background img {
+    height: 3500px;
+  }
 }
 main .main-baner__content {
   position: absolute;
@@ -576,7 +586,7 @@ main .main-baner__content .baner-title {
 }
 @media screen and (max-width: 500px) {
   main .main-baner__content .baner-title {
-    font-size: 25px;
+    font-size: 16px;
   }
 }
 main .main-baner__content .baner-description {
@@ -595,7 +605,7 @@ main .main-baner__content .baner-description {
 }
 @media screen and (max-width: 500px) {
   main .main-baner__content .baner-description {
-    font-size: 16px;
+    font-size: 14px;
     height: 125px;
   }
 }
