@@ -1069,6 +1069,8 @@ main .main-content .user-single__info .user-photo {
 }
 main .main-content .user-single__info .user-photo img {
   object-fit: cover;
+  width: 150px;
+  height: 150px;
 }
 main .main-content .user-single__info .user-description {
   padding-left: 11px;
