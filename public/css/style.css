@@ -741,6 +741,11 @@ main .main-content .article-wrap article .article-title {
   text-transform: uppercase;
   font-size: 18px;
 }
+@media screen and (max-width: 500px) {
+  main .main-content .article-wrap article .article-title {
+    font-size: 15px;
+  }
+}
 main .main-content .article-wrap article .article-title a {
   font-weight: 400;
 }
@@ -901,6 +906,11 @@ main .main-content .single-content .single-description {
   font-size: 20px;
   color: #272727;
   margin-top: 20px;
+}
+@media screen and (max-width: 500px) {
+  main .main-content .single-content .single-description {
+    font-size: 15px;
+  }
 }
 main .main-content .single-content .single-description.intro {
   font-weight: bold !important;
@@ -1071,6 +1081,7 @@ main .main-content .users-list__item .user-photo {
 main .main-content .users-list__item .user-photo img {
   object-fit: cover;
   height: 150px;
+  width: 150px;
 }
 main .main-content .users-list__item .user-info {
   padding-left: 12px;
@@ -1082,17 +1093,37 @@ main .main-content .users-list__item .user-info__title {
   text-transform: uppercase;
   margin-bottom: 13px;
 }
+@media screen and (max-width: 500px) {
+  main .main-content .users-list__item .user-info__title {
+    font-size: 18px;
+  }
+}
 main .main-content .users-list__item .user-info__description {
   font-size: 20px;
+}
+@media screen and (max-width: 500px) {
+  main .main-content .users-list__item .user-info__description {
+    font-size: 16px;
+  }
 }
 main .main-content .users-list__item .user-link {
   width: 100%;
   margin-top: 23px;
 }
+@media screen and (max-width: 500px) {
+  main .main-content .users-list__item .user-link {
+    margin-top: 5px;
+  }
+}
 main .main-content .users-list__item .user-link a {
   color: #0D3D60 !important;
   text-decoration: underline !important;
   font-size: 20px;
+}
+@media screen and (max-width: 500px) {
+  main .main-content .users-list__item .user-link a {
+    font-size: 16px;
+  }
 }
 main .main-content .user-single__title {
   font-size: 25px;
@@ -1183,6 +1214,11 @@ main .main-content .arctic-review__item .arctic-info .arctic-title {
   text-transform: uppercase;
   margin-bottom: 12px;
 }
+@media screen and (max-width: 500px) {
+  main .main-content .arctic-review__item .arctic-info .arctic-title {
+    font-size: 15px;
+  }
+}
 main .main-content .arctic-review__item .arctic-info .arctic-name {
   display: flex;
   justify-content: space-between;
@@ -1190,8 +1226,18 @@ main .main-content .arctic-review__item .arctic-info .arctic-name {
   font-size: 20px;
   margin-bottom: 14px;
 }
+@media screen and (max-width: 500px) {
+  main .main-content .arctic-review__item .arctic-info .arctic-name {
+    font-size: 15px;
+  }
+}
 main .main-content .arctic-review__item .arctic-info .arctic-description {
   font-size: 20px;
+}
+@media screen and (max-width: 500px) {
+  main .main-content .arctic-review__item .arctic-info .arctic-description {
+    font-size: 14px;
+  }
 }
 main .main-content .arctic-review__item .arctic-bottom {
   width: 100%;
