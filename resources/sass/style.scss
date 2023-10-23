@@ -9,7 +9,12 @@ $checkbox-width: 31px;
     line-height: normal;
 }
 
-tbody, td, tfoot, th, thead, tr{
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
     border-width: inherit !important;
     border-style: solid !important;
 }
@@ -368,6 +373,7 @@ header {
     @media screen and (max-width: 500px) {
         background-position: top;
         background-size: cover;
+        padding: 0px;
     }
 
     .mobile-menu {
@@ -418,6 +424,10 @@ header {
         align-items: flex-end;
         justify-content: space-between;
 
+        @media screen and (max-width: 500px) {
+            align-items: center;
+        }
+
         &__left {
             .header-subtitle {
                 font-size: 30px;
@@ -446,6 +456,10 @@ header {
                 color: #0D3D60;
                 text-transform: uppercase;
                 margin-top: 8px;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 60px;
+                }
             }
         }
 
@@ -455,6 +469,10 @@ header {
                 align-items: center;
                 gap: 22px;
                 margin-bottom: 17px;
+
+                @media screen and (max-width: 500px) {
+                    margin-bottom: 0px;
+                }
 
                 li {
                     color: #272727;
@@ -880,6 +898,10 @@ main {
                             font-size: 25px;
                             text-transform: uppercase;
 
+                            @media screen and (max-width: 500px) {
+                                font-size: 15px;
+                            }
+
                             a {
                                 font-weight: 700;
                             }
@@ -896,6 +918,10 @@ main {
                     margin-top: 24px;
                     font-size: 20px;
                     color: #272727;
+
+                    @media screen and (max-width: 500px) {
+                        font-size: 15px;
+                    }
                 }
 
                 .article-bottom {
@@ -907,6 +933,10 @@ main {
                         color: #0D3D60;
                         font-size: 20px;
 
+                        @media screen and (max-width: 500px) {
+                            font-size: 15px;
+                        }
+
                         a {
                             text-decoration: underline !important;
                         }
@@ -915,6 +945,10 @@ main {
                     &__category {
                         color: rgba(39, 39, 39, 0.60);
                         font-size: 20px;
+
+                        @media screen and (max-width: 500px) {
+                            font-size: 15px;
+                        }
 
                         a {
                             text-decoration: underline !important;

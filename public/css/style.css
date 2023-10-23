@@ -5,7 +5,12 @@
   line-height: normal;
 }
 
-tbody, td, tfoot, th, thead, tr {
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
   border-width: inherit !important;
   border-style: solid !important;
 }
@@ -313,6 +318,7 @@ header {
   header {
     background-position: top;
     background-size: cover;
+    padding: 0px;
   }
 }
 header .mobile-menu {
@@ -356,6 +362,11 @@ header .header-content {
   align-items: flex-end;
   justify-content: space-between;
 }
+@media screen and (max-width: 500px) {
+  header .header-content {
+    align-items: center;
+  }
+}
 header .header-content__left .header-subtitle {
   font-size: 30px;
   color: #0D3D60;
@@ -386,11 +397,21 @@ header .header-content__left .header-title {
   text-transform: uppercase;
   margin-top: 8px;
 }
+@media screen and (max-width: 500px) {
+  header .header-content__left .header-title {
+    font-size: 60px;
+  }
+}
 header .header-content__right ul {
   display: flex;
   align-items: center;
   gap: 22px;
   margin-bottom: 17px;
+}
+@media screen and (max-width: 500px) {
+  header .header-content__right ul {
+    margin-bottom: 0px;
+  }
 }
 header .header-content__right ul li {
   color: #272727;
@@ -763,6 +784,11 @@ main .main-content .event-wrap article .article-top__right .article-title {
   font-size: 25px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 500px) {
+  main .main-content .event-wrap article .article-top__right .article-title {
+    font-size: 15px;
+  }
+}
 main .main-content .event-wrap article .article-top__right .article-title a {
   font-weight: 700;
 }
@@ -775,6 +801,11 @@ main .main-content .event-wrap article .article-description {
   font-size: 20px;
   color: #272727;
 }
+@media screen and (max-width: 500px) {
+  main .main-content .event-wrap article .article-description {
+    font-size: 15px;
+  }
+}
 main .main-content .event-wrap article .article-bottom {
   display: flex;
   justify-content: space-between;
@@ -784,12 +815,22 @@ main .main-content .event-wrap article .article-bottom__full {
   color: #0D3D60;
   font-size: 20px;
 }
+@media screen and (max-width: 500px) {
+  main .main-content .event-wrap article .article-bottom__full {
+    font-size: 15px;
+  }
+}
 main .main-content .event-wrap article .article-bottom__full a {
   text-decoration: underline !important;
 }
 main .main-content .event-wrap article .article-bottom__category {
   color: rgba(39, 39, 39, 0.6);
   font-size: 20px;
+}
+@media screen and (max-width: 500px) {
+  main .main-content .event-wrap article .article-bottom__category {
+    font-size: 15px;
+  }
 }
 main .main-content .event-wrap article .article-bottom__category a {
   text-decoration: underline !important;
