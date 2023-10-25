@@ -47,7 +47,7 @@
         @if(count($item->contents) > 0)
         <div class="single-contents">
             <div class="single-contents__title">
-                Статьи по теме:
+                Содержание выпуска:
             </div>
             <ul>
                 @foreach($item->contents as $content)
