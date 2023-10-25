@@ -446,7 +446,8 @@ header {
                 }
 
                 @media screen and (max-width: 500px) {
-                    display: none;
+                    width: 290px;
+                    font-size: 15px;
                 }
             }
 

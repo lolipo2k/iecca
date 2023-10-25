@@ -387,7 +387,8 @@ header .header-content__left .header-subtitle {
 }
 @media screen and (max-width: 500px) {
   header .header-content__left .header-subtitle {
-    display: none;
+    width: 290px;
+    font-size: 15px;
   }
 }
 header .header-content__left .header-title {

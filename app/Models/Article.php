@@ -33,7 +33,7 @@ class Article extends Model
 
     public function contents(): HasMany
     {
-        return $this->hasMany(Content::class, 'article_id', 'id')->orderByDesc('created_at');
+        return $this->hasMany(Content::class, 'article_id', 'id')->orderBy('created_at');
     }
 
     public function getRaitingAttribute()
