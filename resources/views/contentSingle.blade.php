@@ -10,10 +10,10 @@
             {{ date('d-m-y h:i', strtotime($item->created_at)) }}
         </div>
         <div class="single-date">
-            @if($baner->author_name == '')
-            {{$baner->user->fullName}}
+            @if($item->author_name == '')
+            {{$item->user->fullName}}
             @else
-            {{$baner->author_name}}
+            {{$item->author_name}}
             @endif
         </div>
         <div class="single-title">
