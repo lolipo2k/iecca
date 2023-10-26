@@ -72,7 +72,7 @@ Route::get('/material', function () {
 
 
     $c = new Collection;
-    $list = $c->merge($baners_event)->merge($baners_report)->merge($baners_content);
+    $list = $c->merge($baners_event)->merge($baners_report)->merge($baners_content)->sortByDesc('created_at');
     $list = PaginationHelper::paginate($list, 10);
 
     return view("materialList", compact('list'));
