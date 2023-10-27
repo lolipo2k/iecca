@@ -11,7 +11,9 @@
         </div>
         <div class="single-date">
             @if($item->author_name == '')
+            @if($item->user != null)
             {{$item->user->fullName}}
+            @endif
             @else
             {{$item->author_name}}
             @endif

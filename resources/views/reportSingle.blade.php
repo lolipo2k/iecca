@@ -13,7 +13,9 @@
             @if($item->author_name != '')
             {{ $item->author_name }}
             @else
-            {{ $item->user->fullName }}
+            @if($item->user != null)
+            {{$item->user->fullName}}
+            @endif
             @endif
         </div>
         <div class="single-title">
