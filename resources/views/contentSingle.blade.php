@@ -28,6 +28,14 @@
         <div class="single-description">
             {!! $item->intro_text_ru !!}
         </div>
+        <div class="single-bottom">
+            <div class="info">
+                Опубликовано в
+                @foreach($item->categories as $category)
+                <a href="{{ route('events', $category->id) }}">{{$category->name_ru}}</a>
+                @endforeach
+            </div>
+        </div>
         @if($item->attachmentUrl)
         <div class="single-btn">
             <a href="{{$item->attachmentUrl}}" target="_blank">

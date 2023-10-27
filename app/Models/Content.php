@@ -12,7 +12,7 @@ class Content extends Model
 
     protected $table = 'marticle';
 
-    protected $appends = ['attachmentUrl', 'imageUrl'];
+    protected $appends = ['attachmentUrl', 'imageUrl', 'categories'];
 
     public function user(): HasOne
     {
@@ -27,6 +27,21 @@ class Content extends Model
     public function getImageUrlAttribute()
     {
         return $this->getMedia($this->image);
+    }
+
+    public function getCategoriesAttribute()
+    {
+        $tags = Event::rightJoin('tags_to_marticles', 'tags_to_marticles.marticle_id', '=', 'marticle.id')
+            ->where("tags_to_marticles.marticle_id", $this->id)
+            ->select("tags_to_marticles.*")->get();
+        if (isset($tags)) {
+            $data = [];
+            foreach ($tags as $key => $tag) {
+                $data[$key] = Category::find($tag->tag_id);
+            }
+            return $data;
+        }
+        return [];
     }
 
     private function getMedia($item)
