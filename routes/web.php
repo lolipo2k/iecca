@@ -30,6 +30,7 @@ Route::get('/', HomeController::class)->name('home');
 Route::get('/journal/list', [JournalController::class, 'list'])->name('journals');
 Route::get('/journal/{id}', [JournalController::class, 'single']);
 Route::get('/event/list/{id?}', [EventController::class, 'list'])->name('events');
+Route::get('/material/list/{id?}', [EventController::class, 'material'])->name('material');
 Route::get('/event/{id}', [EventController::class, 'single']);
 Route::get('/page/{id}', function ($id) {
     $item = Info::find($id);

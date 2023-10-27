@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\Content;
+use App\Helpers\PaginationHelper;
+use Illuminate\Support\Collection;
 
 class EventController extends Controller
 {
@@ -30,5 +33,32 @@ class EventController extends Controller
         $item->save();
 
         return view("eventSingle", compact('item'));
+    }
+
+    public function material(Request $request)
+    {
+        $event = Event::rightJoin('tags_to_news', 'tags_to_news.news_id', '=', 'news.id')
+            ->where('news.status', 1)
+            ->where('tags_to_news.tag_id', $request->id)
+            ->select("news.*")->get();
+
+        $content = Content::rightJoin('tags_to_marticles', 'tags_to_marticles.marticle_id', '=', 'marticle.id')
+            ->where('marticle.status', 1)
+            ->where('tags_to_marticles.tag_id', $request->id)
+            ->select("marticle.*")->get();
+
+        foreach ($event as $value) {
+            $value->url = "/event/";
+        }
+        foreach ($content as $value) {
+            $value->url = "/content/";
+            $value->intro_text_ru = $value->text_ru;
+        }
+
+        $c = new Collection;
+        $list = $c->merge($content)->merge($event)->sortByDesc('created_at');
+        $list = PaginationHelper::paginate($list, 10);
+
+        return view("materialList", compact('list'));
     }
 }

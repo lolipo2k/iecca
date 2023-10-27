@@ -33,7 +33,6 @@
         @if(count($item->categories) > 0)
         <div class="single-bottom">
             <div class="info">
-                Опубликовано в
                 @foreach($item->categories as $category)
                 <a href="{{ route('events', $category->id) }}">{{$category->name_ru}}</a>
                 @endforeach
