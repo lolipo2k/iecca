@@ -31,7 +31,7 @@ class Content extends Model
 
     public function getCategoriesAttribute()
     {
-        $tags = Event::rightJoin('tags_to_marticles', 'tags_to_marticles.marticle_id', '=', 'marticle.id')
+        $tags = Content::rightJoin('tags_to_marticles', 'tags_to_marticles.marticle_id', '=', 'marticle.id')
             ->where("tags_to_marticles.marticle_id", $this->id)
             ->select("tags_to_marticles.*")->get();
         if (isset($tags)) {
