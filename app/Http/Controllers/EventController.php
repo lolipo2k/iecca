@@ -56,8 +56,9 @@ class EventController extends Controller
             $value->intro_text_ru = $value->text_ru;
         }
 
-        $category = Category::find($request->id);
-        $category->hit = ($category->hit == null || $category->hit == 0) ? 1 : $category->hit++;
+        $category = new Category();
+        $category = $category::find($request->id);
+        $category->hit = ($category->hit == null || $category->hit == 0) ? 1 : $category->hit + 1;
         $category->save();
 
         $c = new Collection;
