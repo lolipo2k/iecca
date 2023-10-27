@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Content;
+use App\Models\Category;
 use App\Helpers\PaginationHelper;
 use Illuminate\Support\Collection;
 
@@ -54,6 +55,10 @@ class EventController extends Controller
             $value->url = "/content/";
             $value->intro_text_ru = $value->text_ru;
         }
+
+        $category = Category::find($request->id);
+        $category->hit = ($category->hit == null || $category->hit == 0) ? 1 : $category->hit++;
+        $category->save();
 
         $c = new Collection;
         $list = $c->merge($content)->merge($event)->sortByDesc('created_at');

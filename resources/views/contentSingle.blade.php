@@ -34,7 +34,7 @@
         <div class="single-bottom">
             <div class="info">
                 @foreach($item->categories as $category)
-                <a href="{{ route('events', $category->id) }}">{{$category->name_ru}}</a>
+                <a href="{{ route('material', $category->id) }}">{{$category->name_ru}}</a>
                 @endforeach
             </div>
         </div>
