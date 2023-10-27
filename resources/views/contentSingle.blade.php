@@ -28,6 +28,7 @@
         <div class="single-description">
             {!! $item->intro_text_ru !!}
         </div>
+        @if(count($item->categories) > 0)
         <div class="single-bottom">
             <div class="info">
                 Опубликовано в
@@ -36,6 +37,7 @@
                 @endforeach
             </div>
         </div>
+        @endif
         @if($item->attachmentUrl)
         <div class="single-btn">
             <a href="{{$item->attachmentUrl}}" target="_blank">
