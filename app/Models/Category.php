@@ -13,6 +13,8 @@ class Category extends Model
 
     protected $appends = ['size'];
 
+    protected $fillable = ['hit'];
+
     public function getSizeAttribute()
     {
         $max = Category::orderByDesc('hits')->first();
