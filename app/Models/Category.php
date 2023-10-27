@@ -13,7 +13,7 @@ class Category extends Model
 
     protected $appends = ['size'];
 
-    protected $fillable = ['hit'];
+    protected $fillable = ['hits'];
 
     public function getSizeAttribute()
     {

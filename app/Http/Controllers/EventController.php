@@ -58,7 +58,7 @@ class EventController extends Controller
 
         $category = new Category();
         $category = $category::find($request->id);
-        $category->hit = ($category->hit == null || $category->hit == 0) ? 1 : $category->hit + 1;
+        $category->hits = ($category->hits == null || $category->hits == 0) ? 1 : $category->hits + 1;
         $category->save();
 
         $c = new Collection;
