@@ -249,7 +249,7 @@
             </div>
             <div class="tags-list">
                 @foreach($tags as $tag)
-                <a href="{{ route('events', $tag->id) }}" @style( [ 'font-size:' . $tag->size . 'px'])>{{$tag->name_ru}}</a>
+                <a href="{{ route('material', $tag->id) }}" @style( [ 'font-size:' . $tag->size . 'px'])>{{$tag->name_ru}}</a>
                 @endforeach
             </div>
             <div class="footer-menu row">
