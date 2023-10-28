@@ -31,6 +31,11 @@ class User extends Authenticatable
         return $this->hasMany(Report::class, 'author_id', 'id');
     }
 
+    public function contents(): HasMany
+    {
+        return $this->hasMany(Content::class, 'author_id', 'id');
+    }
+
     public function getFullNameAttribute()
     {
         if ($this->last_name_ru || $this->first_name_ru) {

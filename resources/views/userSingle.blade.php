@@ -33,6 +33,11 @@
                     <a href="/report/{{$report->id}}">{{$report->name_ru}}</a>
                 </li>
                 @endforeach
+                @foreach($item->contents as $content)
+                <li>
+                    <a href="/content/{{$content->id}}">{{$report->title_ru}}</a>
+                </li>
+                @endforeach
             </ul>
         </div>
         @endif
