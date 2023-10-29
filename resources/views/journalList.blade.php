@@ -33,7 +33,7 @@
             @if($list->currentPage() > 1)
             <div class="article-prev">
                 <a href="{{ route('journals') }}?page={{$list->currentPage() - 1}}">
-                    <img src="/public/icons/arrow-left.svg" alt="">
+                    <img src="/arrow-left.svg" alt="">
                 </a>
             </div>
             @endif
@@ -48,7 +48,7 @@
             @if($list->currentPage() != $list->lastPage())
             <div class="article-next">
                 <a href="{{ route('journals') }}?page={{$list->currentPage() + 1}}">
-                    <img src="/public/icons/arrow-right.svg" alt="">
+                    <img src="/arrow-right.svg" alt="">
                 </a>
             </div>
             @endif

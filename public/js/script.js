@@ -29,8 +29,8 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
-        prevArrow: "<button type='button' class='slick-prev pull-left'><img src='/public/icons/arrow-left.svg'></button>",
-        nextArrow: "<button type='button' class='slick-next pull-right'><img src='/public/icons/arrow-right.svg'></button>"
+        prevArrow: "<button type='button' class='slick-prev pull-left'><img src='/arrow-left.svg'></button>",
+        nextArrow: "<button type='button' class='slick-next pull-right'><img src='/arrow-right.svg'></button>"
     });
 
     $(".main-wrap").slick({

@@ -42,16 +42,16 @@
                         </li>
                         @else
                         <li class="registration-open">
-                            <img src="/public/icons/registration.svg" alt="">
+                            <img src="/registration.svg" alt="">
                             Регистрация
                         </li>
                         <li class="auth-open">
-                            <img src="/public/icons/login.svg" alt="">
+                            <img src="/login.svg" alt="">
                             вход
                         </li>
                         @endif
                         <li class="burger-menu">
-                            <img src="/public/icons/burger.svg" alt="">
+                            <img src="/burger.svg" alt="">
                         </li>
                         <li>
                             <a href="https://csef.ru/" style="font-weight: 700;">cs</a>
@@ -63,13 +63,13 @@
         <div class="mobile-menu">
             <div class="mobile-menu__top burger-menu--close">
                 <div class="registration-open">
-                    <img src="/public/icons/registration.svg" alt="">
+                    <img src="/registration.svg" alt="">
                 </div>
                 <div class="auth-open burger-menu--close">
-                    <img src="/public/icons/login.svg" alt="">
+                    <img src="/login.svg" alt="">
                 </div>
                 <div class="burger-menu--close">
-                    <img src="/public/icons/close.svg" alt="">
+                    <img src="/close.svg" alt="">
                 </div>
             </div>
 
@@ -295,7 +295,7 @@
     <div class="modal modal-auth">
         <div class="modal-content">
             <div class="close">
-                <img src="/public/icons/close.svg" alt="">
+                <img src="/close.svg" alt="">
             </div>
             <div class="section-title">
                 Вход
@@ -331,7 +331,7 @@
     <div class="modal modal-forget">
         <div class="modal-content">
             <div class="close">
-                <img src="/public/icons/close.svg" alt="">
+                <img src="/close.svg" alt="">
             </div>
             <div class="section-title">
                 Восстановление пароля
@@ -350,7 +350,7 @@
     <div class="modal modal-registration">
         <div class="modal-content">
             <div class="close">
-                <img src="/public/icons/close.svg" alt="">
+                <img src="/close.svg" alt="">
             </div>
             <div class="section-title">
                 Регистрация
